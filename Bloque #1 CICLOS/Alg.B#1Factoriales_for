@@ -1,0 +1,16 @@
+Algoritmo Factoriales_for
+	Definir factorial Como Entero;
+	Definir cantidadFactoriales Como Entero;
+	Definir limiteN Como Entero;
+	Definir indice Como Entero;
+	Escribir "¿cuantos factoriales desea calcular?";
+	Leer cantidadFactoriales;
+	Para indice<- 1 hasta cantidadFactoriales Hacer
+		Escribir "¿cual facorial deseas calcular?";
+		Leer factorial;
+		Para limiteN<- factorial -1 con paso -1 Hasta 2 Hacer
+			factorial<- factorial * limiteN;
+		FinPara
+		Escribir "El factorial es:", factorial;
+	FinPara
+FinAlgoritmo

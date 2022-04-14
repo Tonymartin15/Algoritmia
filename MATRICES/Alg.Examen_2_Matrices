@@ -1,0 +1,68 @@
+Algoritmo Examen_matrices_2 //Antonio Armando Martín Medina
+	Definir A, B Como Entero;
+	Definir i, j, size Como Entero;
+	Definir sumMayor, sumIgual Como Entero;
+	Definir sumaA, sumaB Como Entero;
+	//CAPTURAR INFORMACIÓN DEL USUARIO
+	Repetir
+		Escribir "Proporcione el tamaño que tendrán las matrices (TIENE QUE SER IMPAR)";
+		Leer size;
+	Hasta Que size % 2 = 1 // SEA UN NÚMERO IMPAR EL QUE PROPORCIONE EL USUARIO
+	
+	Dimension A[size,size];
+	Dimension B[size,size];
+	
+	//LLENAR AMBAS MATRICES CON NÚMEROS ALEATORIOS
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			A[i,j] <- Aleatorio(1,99);
+			B[i,j] <- Aleatorio(1,99);
+		FinPara
+	FinPara
+	
+	//IMPRIMIR AMBAS MATRICES
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size * 2 - 1 Hacer // Es para recorrer las columnas de la matriz b sobre las mismas filas de la matriz a
+			Si j < size Entonces //Forma parte de las columnas de la matriz A
+				Si A[i,j] < 10 Entonces //Acomodar
+					Escribir "  ", A[i,j], " " Sin Saltar;
+				SiNo
+					Escribir " ", A[i,j], " " Sin Saltar;
+				FinSi
+			SiNo //Forma parte de las columnas de la matriz B
+				Si j = size Entonces //Espaciar entre cada matriz
+					Escribir "   " Sin Saltar; 
+				FinSi
+				Si B[i,j-size] < 10 Entonces // Elige la columna correcta de la matriz B
+					Escribir "  ", B[i,j-size], " " Sin Saltar;
+				SiNo
+					Escribir " ", B[i,j-size], " " Sin Saltar;
+				FinSi
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	//Inicializar las variables
+	sumMayor <- 0;
+	sumIgual <- 0;
+	Para i <- 0 Hasta size - 1 Hacer
+		sumaA <- 0;
+		sumaB <- 0;
+		//SUMAR FILA POR FILA EN CADA UNA DE LAS MATRICES
+		Para j <- 0 Hasta size - 1 Hacer
+			sumaA <- sumaA + A[i,j];
+			sumaB <- sumaB + B[i,j];
+		FinPara
+		//CONTAR EL NÚMERO DE VECES QUE LA SUMA ES MAYOR O IGUAL ENTRE AMBAS MATRICES
+		Si sumaA > sumaB Entonces
+			sumMayor <- sumMayor + 1;
+		FinSi
+		Si sumaA = sumaB Entonces
+			sumIgual <- sumIgual + 1;
+		FinSi
+	FinPara
+	//IMPRIMIR LOS RESULTADOS
+	Escribir sumMayor, "  son las filas en donde la matriz A tuvo mayor suma respecto a las filas de la matriz B";
+	Escribir sumIgual, "  son las filas en donde las filas de A y B sumaron igual";
+FinAlgoritmo

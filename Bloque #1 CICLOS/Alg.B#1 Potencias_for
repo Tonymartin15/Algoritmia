@@ -1,0 +1,12 @@
+Algoritmo Potencias_hastaN_for
+	Definir base, potencia,resultado,indice Como Entero;
+	Escribir "Proporciona el numero base";
+	Leer base;
+	Escribir "Proporciona el valor de la potencia";
+	Leer potencia;
+	resultado<- base;
+	Para indice<- 1 hasta potencia Hacer
+		Escribir base  , "elevado a" , indice  , " es igual a"  ,  resultado ;
+		resultado<- resultado * base;
+	FinPara
+FinAlgoritmo

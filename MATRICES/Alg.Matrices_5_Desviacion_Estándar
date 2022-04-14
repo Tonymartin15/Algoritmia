@@ -1,0 +1,41 @@
+Algoritmo Desviacion_Estandar
+	Definir matriz Como Real;
+	Definir i, j Como Entero; // ITERADORES
+	Definir media Como Real; // PROMEDIO
+	Definir dEstandar Como Real; // DESVIACION ESTANDAR
+	
+	Dimension matriz[5,3];
+	media <- 0;
+	dEstandar <- 0;
+	
+	Para i <- 0 Hasta 4 Hacer
+		Para j <- 0 Hasta 2 Hacer
+			matriz[i,j] <- azar(100);
+			media <- media + matriz[i,j];
+		FinPara
+	FinPara
+	
+	media <- media / 15;
+	
+	Para i <- 0 Hasta 4 Hacer
+		Para j <- 0 Hasta 2 Hacer
+			dEstandar <- dEstandar + ( (matriz[i,j] - media) ^ 2 );
+		FinPara
+	FinPara
+	
+	dEstandar <- Raiz( dEstandar / 15 );
+	
+	Para i <- 0 Hasta 4 Hacer
+		Para j <- 0 Hasta 2 Hacer
+			Si matriz[i,j] > 9 Entonces
+				Escribir  " ", matriz[i,j], " " Sin Saltar;
+			SiNo
+				Escribir "  ", matriz[i,j], " " Sin Saltar;
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	Escribir "La media: ", media;
+	Escribir "La desviación estándar es: ", dEstandar;
+FinAlgoritmo

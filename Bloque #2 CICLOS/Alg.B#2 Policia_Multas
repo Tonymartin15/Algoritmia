@@ -1,0 +1,70 @@
+Algoritmo Policia_del_Diablo_infracciones
+	Definir cantidadMultas1 Como Entero;
+	Definir CantidadMultas2 Como Entero;
+	Definir cantidadMultas3 Como Entero;
+	Definir montoTotal1 Como Real;
+	Definir montoTotal2 Como Real;
+	Definir montoTotal3 Como Real;
+	Definir limite1 Como Entero;
+	Definir limite2 Como Entero;
+	Definir limite3 Como Entero;
+	Definir limite Como Entero;
+	Definir placa Como Caracter;
+	Definir zona Como Caracter;
+	Definir velocidad Como Real;
+	Definir multa Como Real;
+	Definir resp Como Caracter;
+	
+	cantidadMultas1<- 0;
+	CantidadMultas2<- 0;
+	cantidadMultas3<- 0;
+	montoTotal1<- 0;
+	montoTotal2<- 0;
+	montoTotal3<- 0;
+	limite1<- 90;
+	limite2<- 100;
+	limite3<- 110;
+	
+	Repetir
+		Escribir "Proporcione la placa del auto";
+		Leer placa;
+		Repetir
+			Escribir "Proporcione la zona: A, B o C";
+			Leer zona;
+			zona<- Mayusculas(zona);
+		Hasta Que zona ="A" o zona = "B" o zona = "C"
+		Escribir "Proporcione la velocidad del auto";
+		Leer velocidad;
+		Si zona = "A" Entonces
+			limite<- limite1;
+		SiNo
+			Si zona ="B" Entonces
+				limite<- limite2;
+			SiNo
+				limite<- limite3;
+			FinSi
+		FinSi
+		multa<- (velocidad - limite) * 100;
+		Si zona= "A" Entonces
+			cantidadMultas1<- cantidadMultas1 + 1;
+			montoTotal1<- montoTotal1 + multa;
+		SiNo
+			Si zona ="B" Entonces
+				CantidadMultas2<- CantidadMultas2 + 1;
+				montoTotal2<- montoTotal2 + multa;
+			SiNo
+				cantidadMultas3<- cantidadMultas3 + 1;
+				montoTotal3<- montoTotal3 + multa;
+			FinSi
+		FinSi
+		Escribir "Placa | Zona | Limite | Velocidad | Multa";
+		Escribir placa," | ", zona," | ",limite," | ", velocidad," | ",multa;
+		Repetir
+			Escribir "Hay alguna otra infracción oficial? s/n";
+			Leer resp;
+		Hasta Que  resp = "s" o resp = "n"
+	Hasta Que resp = "n"
+	Escribir "Zona A - Total de multas: ", cantidadMultas1,"    Monto: ", montoTotal1;
+	Escribir "Zona B - Total de multas: ", cantidadMultas2,"    Monto: ", montoTotal2;
+	Escribir "Zona C - Total de multas: ", cantidadMultas3,"    Monto: ", montoTotal3;
+FinAlgoritmo

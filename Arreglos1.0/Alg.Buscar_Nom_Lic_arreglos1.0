@@ -1,0 +1,44 @@
+Algoritmo Buscar_licenciaturas
+	Dimension licenciaturas[6], claves[6];
+	Definir esta como logico;
+	Definir i Como Entero;
+	Definir indice como entero;
+	Definir licenciaturas,claves, nombre, resp, clave como cadena;
+	licenciaturas[0]<- "Licenciatura en Matemáticas";
+	licenciaturas[1]<- "Licenciatura en Ciencias de la Computación";
+	licenciaturas[2]<- "Licenciatura en Ingeniería en Computación";
+	licenciaturas[3]<- "Licenciatura en Ingeniería de Software";
+	licenciaturas[4]<- "Licenciatura en Actuaría";
+	licenciaturas[5]<- "Maestría en Ciencias de la Computación";
+	
+	claves[0]<- "LM";
+	claves[1]<- "LCC";
+	claves[2]<- "LIC";
+	claves[3]<- "LIS";
+	claves[4]<- "LA";
+	claves[5]<- "MCC";
+	
+	Repetir
+		Escribir "Escriba su nombre";
+		Leer nombre;
+		Escribir "Escriba su clave";
+		Leer clave;
+		esta<- Falso; //Supongo que el nombre no esta en la lista
+		indice<- -1;
+		i<-0;
+		mientras i<6 y esta=falso Hacer
+			si claves[i]=clave Entonces
+				esta<- verdadero;
+				indice <- i;
+			FinSi
+			i<- i+1;
+		FinMientras
+		Si esta=falso Entonces
+			Escribir nombre, " la clave no es válida";
+		sino 
+			Escribir "Me llamo ", nombre, "  estudio en ", licenciaturas[indice];
+		FinSi
+		Escribir "¿otro nombre? s/n";
+		Leer resp;
+	Hasta Que resp<>"s"
+FinAlgoritmo

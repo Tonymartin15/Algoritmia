@@ -1,0 +1,103 @@
+Algoritmo Tendencia_central
+	Definir matriz Como Entero; //Matriz que se usará
+	Definir i, j, k Como Entero; //ITERADORES
+	Definir nFilas, mColumnas Como Entero;
+	Definir media, mediana Como Real;
+	Definir moda Como Entero;
+	Definir min Como Entero;
+	Definir max Como Entero;
+	Definir contador Como Entero;
+	
+	Escribir "Ingrese el número de filas que desea tener en la matriz";
+	Leer nFilas;
+	Escribir "Ingrese el número de columnas que desea tener en la matriz";
+	Leer mColumnas;
+	media <- 0;
+	// LLENAR LA MATRIZ POR EL USUARIO
+	
+	Dimension matriz[nFilas,mColumnas];
+	Para i <- 0 Hasta nFilas - 1 Hacer
+		Para j <- 0 Hasta mColumnas - 1 Hacer
+			Escribir "Ingrese el elemento [",i,",",j,"]";
+			Leer matriz[i,j];
+			Si i == 0 & j == 0 Entonces
+				min <- matriz[i,j];
+				max <- min;
+			SiNo
+				Si matriz[i,j] < min Entonces
+					min <- matriz[i,j];
+				FinSi
+				Si matriz[i,j] > max Entonces
+					max <- matriz[i,j];
+				FinSi
+			FinSi
+			media <- media + matriz[i,j];
+		FinPara
+	FinPara
+	//IMPRIMIR LA MATRIZ
+	
+	Para i <- 0 Hasta nFilas - 1 Hacer
+		Para j <- 0 Hasta mColumnas - 1 Hacer
+			Escribir " ", matriz[i,j], " " Sin Saltar;
+		FinPara
+		Escribir "";
+	FinPara
+	// OBTENER LA MEDIA DE LA MATRIZ
+	
+	media <- media / (nFilas * mColumnas);
+	//OBTENER LA MODA DE LA MATRIZ
+	
+	Dimension moda[max - min+ 1];
+	Para i <- 0 Hasta max - min Hacer
+		moda[i] <- 0;
+	FinPara
+	
+	Para i <- 0 Hasta nFilas - 1 Hacer
+		Para j <- 0 Hasta mColumnas - 1 Hacer
+			k <- matriz[i,j] + (min * (-1));
+			moda[k] <- moda[k] + 1;
+		FinPara
+	FinPara
+	
+	k <- 0;
+	Para i <- 0 Hasta max - min Hacer
+		Si moda[i] > moda[k] Entonces
+			k <- i;
+		FinSi
+	FinPara
+	
+	Si nFilas * mColumnas % 2 = 0 Entonces
+		j <- (nFilas * mColumnas) / 2;
+	SiNo
+		j <- (nFilas * mColumnas) / 2 + 0.5;
+	FinSi
+	//OBTENER LA MEDIANA DE LA MATRIZ
+	
+	contador <- 0;
+	Para i <- 0 Hasta max - min Hacer
+		contador <- contador + moda[i];
+		Si contador > j Entonces
+			mediana <- i + min;
+			i <- max - min;
+		SiNo
+			Si contador = j Entonces
+				mediana <- i + min;
+				Si j % 2 = 0 Entonces
+					Para i <- i + 1 Hasta max - min Hacer
+						Si moda[i] > 0 Entonces
+							mediana <- mediana + i + min;
+							mediana <- mediana / 2;
+							i <- max - min;
+						FinSi
+					FinPara
+				FinSi
+				i <- max - min;
+			FinSi
+		FinSi
+	FinPara
+	
+	Escribir "Media: " media;	
+	Escribir "Moda: " k + min;
+	Escribir "Mediana: ", mediana;
+	Escribir "Rango: [", min, ",", max, "]";
+FinAlgoritmo

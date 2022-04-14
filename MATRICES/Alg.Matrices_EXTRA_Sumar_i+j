@@ -1,0 +1,19 @@
+Algoritmo Sumatoria // sumar i+j en cada posición (i,j)
+	Definir i, j, tabla Como Entero;
+	Definir N Como Entero;
+	N<- 8;
+	Dimension tabla[N,N];
+	//LLENAR LA MATRIZ
+	Para i<- 0 hasta N-1 Hacer
+		Para j<- 0 hasta N-1 Hacer
+			tabla[i,j]<- i + j;
+		FinPara
+	FinPara
+	//IMPRIMIR PANTALLA
+	Para i<- 0 hasta N-1 Hacer // recorrer filas
+		Para j<- 0 hasta N-1 Hacer // recorrer columnas
+			Escribir "    ", tabla[i,j], "    ", Sin Saltar;
+		FinPara
+		Escribir "    ";
+	FinPara
+FinAlgoritmo

@@ -1,0 +1,36 @@
+Algoritmo Ingreso_universidad_n_
+	Definir cupo Como Entero;
+	Definir nombreAspirante Como Caracter;
+	Definir promedioAspirante Como Entero;
+	Definir quedaCupo Como Logico;
+	Definir resp Como Caracter;
+	Definir hayOtroAspirante Como Logico;
+	Definir contador Como Entero;
+	Escribir "¿cual es el cupo que tiene la escuela para alumnos de nuevo ingreso?";
+	Leer cupo;
+	contador<- 0;
+	quedaCupo<- contador < cupo;
+	resp<- "s";
+	hayOtroAspirante<- resp ="s";
+	Mientras quedaCupo y hayOtroAspirante
+		Escribir "¿cual es el nombre del aspirante?";
+		Leer nombreAspirante;
+		Escribir "¿cual es el promedio con base 100 de " , nombreAspirante ," ?";
+		Leer promedioAspirante;
+		Si promedioAspirante > 75 Entonces
+			Escribir nombreAspirante ,  " ha sido aceptado(a)";
+			contador<- contador + 1;
+		SiNo
+			Escribir nombreAspirante ,  " no ha sido aceptado(a)";
+		FinSi
+		Escribir  " Quedan " ,  cupo - contador , " lugares en disponibilidad";
+		quedaCupo<- contador < cupo;
+		Si quedaCupo Entonces
+			Repetir
+				Escribir "Hay mas aspirantes? s/n";
+				Leer resp;
+			Hasta Que resp = "s" o resp = "n"
+			hayOtroAspirante<- resp ="s";
+		FinSi
+	FinMientras
+FinAlgoritmo

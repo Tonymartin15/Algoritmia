@@ -1,0 +1,40 @@
+Algoritmo Buscador_azar_BATALLA_NAVAL
+	Definir matriz Como Entero;
+	Definir i, j, num Como Entero;
+	
+	Dimension matriz[10,10];
+	
+	Escribir "      1   2   3   4   5   6   7   8   9  10";
+	Escribir "      --  --  --  --  --  --  --  --  --  -- ";
+	
+	// LLENAR LA MATRIZ COMPLETA
+	Para i <- 0 Hasta 9 Hacer
+		Si i < 9 Entonces
+			Escribir " ",i + 1, " [" Sin Saltar;
+		SiNo
+			Escribir i + 1, " [" Sin Saltar;
+		FinSi
+		
+		Para j <- 0 Hasta 9 Hacer
+			matriz[i,j] <- azar(100);
+			Si matriz[i,j] > 9 Entonces
+				Escribir " ", matriz[i,j], " " Sin Saltar;
+			SiNo
+				Escribir "  ", matriz[i,j], " " Sin Saltar;
+			FinSi
+		FinPara
+		Escribir "]";
+	FinPara
+	
+	Escribir "¿Qué número desea buscar entre todos los de la matriz?";
+	Leer num;
+	
+	Para i <- 0 Hasta 9 Hacer
+		Para j <- 0 Hasta 9 Hacer
+			Si matriz[i,j] = num Entonces
+				Escribir "Hay un barco en estas coordenadas...¡DISPARA!";
+				Escribir "[",i+1,",",j+1,"]";
+			FinSi
+		FinPara
+	FinPara
+FinAlgoritmo

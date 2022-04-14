@@ -1,0 +1,50 @@
+Algoritmo Impuestos_Autos
+	Definir precio Como Real;
+	Definir nAutos Como Entero;
+	Definir categoria Como Entero;
+	Definir categoria1 Como Real;
+	Definir categoria2 Como Real;
+	Definir categoria3 Como Real;
+	Definir total1 Como Real;
+	Definir total2 Como Real;
+	Definir total3 Como Real;
+	Definir totalGeneral Como Real;
+	categoria1<- 1.1;
+	categoria2<- 1.07;
+	categoria3 <- 1.05;
+	total1<- 0;
+	total2<- 0;
+	total3<- 0;
+	totalGeneral<- 0;
+	Escribir "¿ Con cuantos autos cuenta?";
+	Leer nAutos;
+	Mientras nAutos > 0 Hacer
+		Escribir "¿ cuanto es el costo del auto?";
+		Leer precio;
+		Escribir "¿De que categoria es su auto?";
+		Leer categoria;
+		Si categoria = 1 Entonces
+			precio<- precio * categoria1;
+			total1<- total1 + precio;
+			
+		SiNo
+			Si categoria = 2 Entonces
+				precio<- precio * categoria2;
+				total2<- total2 + precio;
+			
+			SiNo
+				precio<- precio * categoria1;
+				total3<- total3 + precio;
+					
+				
+			FinSi
+		FinSi
+		totalGeneral<- totalGeneral + precio;
+		Escribir "Por el auto debe pagar", precio;
+		nAutos <- nAutos - 1;
+	FinMientras
+	Escribir "Por la categoría 1 debe pagar $", total1;
+	Escribir "Por la categoría 2 debe pagar $", total2;
+	Escribir "Por la categoría 3 debe pagar $", total3;
+	Escribir "En total, por todos los autos debes pagar $", totalGeneral;
+FinAlgoritmo

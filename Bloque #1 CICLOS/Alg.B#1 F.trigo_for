@@ -1,0 +1,8 @@
+Algoritmo  funciones_trignometricas_for
+	Definir x Como Real;
+	
+	Escribir "/  x  /  Seno(x)  /  Coseno(x)  /  Arco Tangente(x)  ";
+	Para x<- -1 con paso 0.2 Hasta 1 Hacer
+		Escribir " / ", x ," / ", sen(x) , " / " , cos(x) , " / " , atan(x) , " / ";
+	FinPara
+FinAlgoritmo

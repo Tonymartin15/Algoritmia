@@ -1,0 +1,5 @@
+Algoritmo EXTRA_norma_Euclidiana// ES LA SUMA de los componentes del vector al cuadrado  y sacar la raiz  
+	//LA NORMA ES UNA OPREACIÓN QUE NO AFECTA AL VECTOR, PORQUE ELEVAS AL CUADRADO Y LUEGO SACAS RAIZ
+	Definir i Como Entero;
+	Definir num Como Real;
+FinAlgoritmo

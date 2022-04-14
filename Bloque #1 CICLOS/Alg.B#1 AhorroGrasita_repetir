@@ -1,0 +1,31 @@
+Algoritmo Ahorro_retiro_para_grasita_repetir
+	Definir objetivo Como Real;
+	Definir dinero Como Real;
+	Definir ahorro Como Real;
+	Definir resp Como Caracter;
+	objetivo<- 2100.0;
+	ahorro<- 0.0;
+	dinero<- 0.0;
+	Repetir
+		Repetir
+			Escribir "¿Deseas depositar o retirar dinero? Escribe D para depositar o R para retirar";
+			Leer resp;
+		Hasta Que resp = "D" o resp = "R"
+		Si resp = "R" Entonces
+			Escribir "¿cuanto desea retirar de la cuenta esta vez?";
+			Leer dinero;
+			Si dinero > ahorro Entonces
+				Escribir "No hay suficiente dinero en la cuenta";
+			SiNo
+				ahorro <- ahorro - dinero;
+				Escribir "Tienes", ahorro, "aun ahorrados en la cuenta guardados";
+			FinSi
+		SiNo
+			Escribir "¿Cuanto deseas depositar a la cuenta esta vez?";
+			Leer dinero;
+			ahorro<- ahorro + dinero;
+			Escribir " Tienes ", ahorro, " ahorrado actualmente en la cuenta";
+		     FinSi
+	Hasta Que ahorro >= objetivo
+	Escribir "Felididades, el camino fue dificil pero ya tienes lo suficiente para comprar tus tenis y si sobra algo, ahorra de nuevo con nostros";
+FinAlgoritmo

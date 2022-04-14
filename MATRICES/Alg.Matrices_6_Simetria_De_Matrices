@@ -1,0 +1,49 @@
+Algoritmo SIMETRIA_DE_MATRICES
+	//Cuando se dice que una matriz es simétrica, se refiere a que la simetría se produce entre los valores a ambos lados de la diagonal principal.
+	//Una Matriz Simétrica es aquella matriz cuadrada que es igual a su traspuesta.
+	
+	Definir matriz Como Entero;
+	Definir i, j, size Como Entero;
+	Definir esSimetrica Como Logico;
+	
+	Escribir "Ingresa el tamaño de la matriz";
+	Leer size;
+	
+	Dimension matriz[size,size];
+	esSimetrica <- Verdadero;
+	
+	// LLENAR LA MATRIZ
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			Escribir "Ingresa el elemento de la posición [",i,",",j,"]";
+			Leer matriz[i,j];
+		FinPara
+	FinPara
+	//IMPRIMIR LA MATRIZ
+	Para i <- 0 Hasta size- 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			Si matriz[i,j] > 9 Entonces
+				Escribir " ", matriz[i,j], " " Sin Saltar;
+			SiNo
+				Escribir "  ", matriz[i,j], " " Sin Saltar;
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- i Hasta size - 1 Hacer
+			Si matriz[i, j] <> matriz[j,i] Entonces
+				esSimetrica <- Falso;
+				i <- size - 1;
+				j <- size - 1;
+			FinSi
+		FinPara
+	FinPara
+	
+	Si esSimetrica Entonces
+		Escribir "La matriz es simetrica";
+	SiNo
+		Escribir "La matriz no es simetrica";
+	FinSi
+FinAlgoritmo

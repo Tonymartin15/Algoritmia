@@ -1,0 +1,25 @@
+Algoritmo Reemplazo_numerico // CORREGIR
+	Definir i Como Entero;
+	Definir num Como Entero;
+	Definir aux Como Entero;
+	Definir num2 Como Entero;
+	Definir resp Como Caracter;
+	Dimension num[5];
+	Para i<- 0 hasta 4 Hacer
+		num[i]<- 0;
+	FinPara
+	Repetir
+		Escribir "Ingrese el número que desea agregar a la lista";
+		Leer num2;
+		Para i<- 4 hasta 1 con paso -1 Hacer
+			aux<- num[i-1];
+			num[i]<- aux;
+		FinPara
+		num[0]<- num2;
+		Para i<- 0 hasta 4 Hacer
+			Escribir num[1];
+		FinPara
+		Escribir "Le gustaría agregar otro número? s/n";
+		Leer resp;
+	Hasta Que resp = "n"
+FinAlgoritmo

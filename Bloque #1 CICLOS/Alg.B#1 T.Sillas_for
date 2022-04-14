@@ -1,0 +1,58 @@
+Algoritmo Trabajadores_sillas_for
+	Definir nombreTrabajador1, nombreTrabajador2, nombreTrabajador3 Como Caracter;
+	Definir mejorTrabajador Como Caracter;
+	Definir totalSillasGeneral Como Entero;
+	Definir totalSillasDiarias Como Entero;
+	Definir total Como Entero;
+	Definir mejorTotal Como Entero;
+	Definir total1, total2, total3 Como Entero;
+	Definir indice Como Entero;
+	Definir dia Como Entero;
+	totalSillasGeneral<- 0;
+	total1<- 0;
+	total2<- 0;
+	total3<- 0;
+	Para indice<- 1 hasta 3 Hacer
+		Escribir "¿Quien es el trabajador", indice,"?";
+		Si indice = 1 Entonces
+			Leer nombreTrabajador1;
+		SiNo
+			Si indice = 2 Entonces
+				Leer nombreTrabajador2;
+			SiNo
+				Leer nombreTrabajador3;
+			FinSi
+		FinSi
+		total<- 0;
+		Para dia<- 1 hasta 5 Hacer
+			Escribir "¿cuantas sillas hizo el dia", dia,"?";
+			Leer totalSillasDiarias;
+			total<- total + totalSillasDiarias;
+		FinPara
+		Si indice = 1 Entonces
+			total1<- total;
+			mejorTrabajador<- nombreTrabajador1;
+			mejorTotal<- total1;
+		SiNo
+			Si indice = 2 Entonces
+				total2 <- total;
+				Si total2 > mejorTotal Entonces
+					mejorTotal <- total2;
+					mejorTrabajador<- nombreTrabajador2;
+				FinSi
+			SiNo
+				total3<- total;
+				Si total3 > mejorTotal Entonces
+					mejorTotal<- total3;
+					mejorTrabajador<- nombreTrabajador3;
+				FinSi
+			FinSi
+		FinSi
+		totalSillasGeneral<- totalSillasDiarias + total;
+	FinPara
+	Escribir "Los trabajadores lograron hacer un total de" , total1 + total2 + total3 , "sillas";
+	Escribir nombreTrabajador1 , "hizo" , total1 , "sillas";
+	Escribir nombreTrabajador2 , "hizo" , total2 , "sillas";
+	Escribir nombreTrabajador3 , "hizo" , total3 , "sillas";
+	Escribir "El mejor de los trabajadores fue", mejorTrabajador ," que pudo realizar" , mejorTotal , "sillas";
+FinAlgoritmo

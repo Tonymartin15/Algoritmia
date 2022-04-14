@@ -1,0 +1,22 @@
+Algoritmo DIAS_DE_LA_SEMANA_ARREGLOS
+	Definir semana como cadena;
+	Definir resp como entero;
+	Dimension semana[ 7 ] ;
+	semana[0] = "Domingo";
+	semana[1] = "Lunes";
+	semana[2] = "Martes";
+	semana[3] = "Miércoles";
+	semana[4] = "Jueves";
+	semana[5] = "Viernes";
+	semana[6] = "Sábado";
+	Escribir "¿Que dia quieres?";
+	Leer resp;
+	Mientras resp >= 1 y resp <= 7 Hacer
+		Escribir " El dia ", resp , " de la semana es: ", semana[resp-1]; 
+		Escribir "¿Que dia quieres?";
+		Leer resp;
+	FinMientras
+	Si resp > 7 Entonces
+		Escribir "No existe el día 8 bro";
+	FinSi
+FinAlgoritmo

@@ -1,0 +1,38 @@
+Algoritmo Matriz_de_pares
+	Definir A,B Como Entero; // LAS DOS MATRICES
+	Definir i,j, N, contador Como Entero;
+	N<- 5;
+	Dimension A[N,N], B[N,N];
+	//LLENAR LA PRIMERA MATRIZ CON LOS NÚMEROS AL AZAR
+	Para i<- 0 hasta N-1 Hacer
+		Para j<-0 hasta N-1 Hacer
+			A[i,j]<- azar(100);
+			B[i,j]<- 0;
+		FinPara
+	FinPara
+	//IMPRIMIR LA PRIMERA MATRIZ
+	Para i<- 0 hasta N-1 Hacer // recorrer filas
+		Para j<- 0 hasta N-1 Hacer // recorrer columnas
+			Escribir "   ", A[i,j], "   ", Sin Saltar;
+		FinPara
+		Escribir "    "; // PONERLO PARA CORREGIR EL SIN SALTAR
+	FinPara
+	//BUSCAR LOS NÚMEROS PARES DE LA PRIMERA MATRIZ Y CONTAR LOS PARES
+	contador<- 0;
+	Para i<- 0 hasta N-1 Hacer
+		Para j<-0 hasta N-1 Hacer
+			Si A[i,j]%2=0 Entonces
+				contador<- contador+1;
+				B[i,j]<- contador;
+			FinSi
+		FinPara
+	FinPara
+	//IMPRIMIR LA MATRIZ B CON EL NÚMERO DE PARES QUE HUBO EN LA MATRIZ A
+	Escribir "Los números de esta matriz representan cuantos números pares habían en la primera matriz";
+	Para i<- 0 hasta N-1 Hacer // recorrer filas
+		Para j<- 0 hasta N-1 Hacer // recorrer columnas
+			Escribir "   ", B[i,j], "   ", Sin Saltar;
+		FinPara
+		Escribir "    "; // PONERLO PARA CORREGIR EL SIN SALTAR
+	FinPara
+FinAlgoritmo

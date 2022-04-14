@@ -1,0 +1,21 @@
+Algoritmo Promedio_centinela_repetir
+	Definir suma Como Real;
+	Definir num Como Entero;
+	Definir promedio Como Real;
+	Definir cuenta Como Entero;
+	Suma<- 0.0;
+	promedio<- 0.0;
+	cuenta<- 0;
+	Repetir
+		Escribir "Proporcione un numero";
+		Leer num;
+		Si num <> -1 Entonces
+			suma<- suma + num;
+			cuenta<- cuenta + 1;
+		FinSi
+	Hasta Que num= -1
+	Si cuenta > 0 Entonces
+		promedio<- suma/ cuenta;
+	FinSi
+	Escribir "El promedio es de:", promedio;
+FinAlgoritmo

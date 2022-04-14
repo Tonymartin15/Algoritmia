@@ -1,0 +1,65 @@
+Algoritmo Empresa_Autos // poner lo de batalla naval
+	Definir matriz Como Real;
+	Definir i, j Como Entero;
+	Definir sucursales, tiempoVentas Como Entero;
+	Definir mejorSucursal Como Entero;
+	Definir mejorProm Como Entero;
+	
+	Escribir "¿Cuántas sucursales existen?";
+	Leer sucursales;
+	Escribir "¿Cuántos años hay de ventas?";
+	Leer tiempoVentas;
+	Dimension matriz[sucursales +1, tiempoVentas +1];
+	
+	Para i<- 0 hasta sucursales -1 hacer 
+		Para j<-0 hasta tiempoVentas -1 Hacer
+			matriz[i,j]<-azar(10);
+		FinPara
+	FinPara
+	Para i<- 0 hasta sucursales -1 Hacer
+		matriz[i,tiempoVentas]<- 0;
+	FinPara
+	Para j<-0 hasta tiempoVentas-1 Hacer
+		matriz[sucursales,j]<-0;
+	FinPara
+	
+	Para i<- 0 hasta sucursales -1 hacer 
+		Para j<- 0 hasta tiempoVentas -1 Hacer
+			Escribir "   ", matriz[i,j], "   ", sin saltar;
+		FinPara
+		Escribir "   ";
+	FinPara
+	Para i<- 0 hasta sucursales -1 Hacer
+		Para j<-0 hasta tiempoVentas - 1 Hacer
+			matriz[i,tiempoVentas]<- matriz[i,tiempoVentas] + matriz[i,j];
+			matriz[sucursales,j]<- matriz[sucursales,j]+ matriz[i,j];
+		FinPara
+	FinPara
+	
+	Para i<-0 hasta sucursales -1 Hacer
+		Si i= 0 Entonces
+			mejorSucursal<- 0;
+		SiNo
+			Si matriz[i,tiempoVentas] > matriz[mejorSucursal, tiempoVentas] Entonces
+				mejorSucursal<- i;
+			FinSi
+		FinSi
+	FinPara
+	
+	Para j<- 0 hasta tiempoVentas - 1 Hacer
+		matriz[sucursales,j]<- matriz[sucursales,j]/sucursales;
+		Si j= 0 Entonces
+			mejorProm<-0;
+		SiNo
+			Si matriz[sucursales,j] > matriz[sucursales,mejorProm] Entonces
+				mejorProm<- j;
+			FinSi
+		FinSi
+	FinPara
+	
+	Escribir "La sucursal que más ha vendido durante todo el tiempo es:", mejorSucursal + 1;
+	Para j<- 0 hasta tiempoVentas -1 Hacer
+		Escribir "El promedio del año ", j+1,": ", matriz[sucursales,j];
+	FinPara
+	Escribir "El año en el que hubo mayor promedio de ventas fue : ", mejorProm + 1;
+FinAlgoritmo

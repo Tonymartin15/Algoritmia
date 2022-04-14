@@ -1,0 +1,14 @@
+Algoritmo suma_potencias_repetir
+	Definir n Como Entero;
+	Definir cuenta Como Entero;
+	Definir suma Como Entero;
+	cuenta<- 1;
+	suma<- 0;
+	Escribir "Hasta que numero desea finalizar la sucesión?";
+	Leer n;
+	Repetir
+		suma<- suma + cuenta^ cuenta;
+		cuenta<- cuenta + 1;
+	Hasta Que  cuenta > n
+	Escribir "La suma es de:", suma;
+FinAlgoritmo

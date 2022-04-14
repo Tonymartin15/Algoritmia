@@ -1,0 +1,25 @@
+Algoritmo Copiador_de_ARREGLOS
+	Definir A Como Entero;
+	Definir B Como Entero;
+	Definir i Como Entero;
+	Dimension A[5];
+	Dimension B[5];
+	// CAPTURAR
+	Para i<- 0 hasta 4 Hacer
+		Escribir "Proporcione el elemento " ,i, " del arreglo:";
+		Leer A[i];
+	FinPara
+	//COPIAR
+	Para i<- 0 hasta 4 Hacer
+		B[4-i] <- A[i];
+	FinPara
+	//IMPRIMIR
+	Para i<- 0 hasta 4 Hacer
+		Escribir "El vector en orden";
+		Escribir A[i];
+	FinPara
+	Escribir "El vector inverso";
+	Para i<- 0 hasta 4 Hacer
+		Escribir B[i];
+	FinPara
+FinAlgoritmo

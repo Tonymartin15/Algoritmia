@@ -1,0 +1,6 @@
+Algoritmo Ubicar_numeros_en_vector
+	Definir i Como Entero;
+	Definir D Como Entero; // dimensión o total de números en la lista del vector
+	Definir num Como Entero; // número que desea ubicar en el vector
+	Dimension 
+FinAlgoritmo

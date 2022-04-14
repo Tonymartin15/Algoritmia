@@ -1,0 +1,18 @@
+Algoritmo Contador_vocales_mientras
+	Definir num, i, suma Como Entero;
+	Definir letra Como Caracter;
+	num<- 0;
+	i<- 0;
+	suma<- 0;
+	Escribir "¿cuantos letras desea escribir?";
+	Leer num;
+	Mientras (num <> i ) Hacer
+		Leer letra;
+		letra<- Minusculas(letra);
+		Si (letra = "a" o letra="e" o letra= "i" o letra ="o" o letra="u") entonces
+			suma<- suma + 1;
+		FinSi
+		i<- i+1;
+	FinMientras
+	Escribir "Escribiste: ", suma, " vocales ";
+FinAlgoritmo

@@ -1,0 +1,38 @@
+Algoritmo vectores_al_azar
+	Definir vector Como Entero;
+	Definir d Como Entero;
+	Definir resp Como Caracter;
+	Definir quieresPositivos Como Logico;
+	Definir quieresNegativos Como Logico;
+	Definir i Como Entero;
+	Definir numMinimo Como Entero;
+	Definir numMaximo Como Entero;
+	numMinimo <- 0;
+	numMaximo <- 0;
+	d <- 0;
+	Repetir
+		Escribir "¿Cuál es la dimensión del vector?";
+		Leer d;
+	Hasta Que d > 0
+	Dimension vector[d];
+	Repetir
+		Escribir "¿Quieres incluir números enteros positivos? s/n";
+		Leer resp;
+	Hasta Que resp = 's' | resp = 'n'
+	quieresPositivos <- resp = 's';
+	Repetir
+		Escribir "¿Quieres incluir números enteros negativos? s/n";
+		Leer resp;
+	Hasta Que resp = 's' | resp = 'n'
+	quieresNegativos <- resp = 's';
+	Si quieresPositivos Entonces
+		numMaximo <- 100;
+	FinSi
+	Si quieresNegativos Entonces
+		numMinimo <- -100;
+	FinSi
+	Para i <- 0 Hasta d - 1 Hacer
+		vector[i] <- Aleatorio(numMinimo, numMaximo);
+		Escribir "El elemento en la posición [" , i + 1, "] es el número ", vector[i];
+	FinPara
+FinAlgoritmo

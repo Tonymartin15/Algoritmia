@@ -1,0 +1,28 @@
+Algoritmo Cuadrado_o_no_cuadrado
+Definir coorX Como Real;
+Definir coorY Como Real;
+Dimension coorX[4];
+Dimension coorY[4];
+Definir i Como Entero;
+Definir distancia Como real;
+Dimension distancia[4];
+	Para i <- 0 hasta 3 Hacer
+		Escribir "Ingrese la coordenada x número ", i + 1;
+		Leer coorX[i];
+	FinPara
+	Para i <- 0 hasta 3 Hacer
+		Escribir "Ingrese la coordenada y número ", i + 1;
+		Leer coorY[i];
+	FinPara
+	// SACAR LA DISTANCIA ENTRE LOS PUNTOS INDIVIDUALMENTE
+	distancia[0] <- (coorX[0] - coorX[1]) ^ 2 + (coorY[0] - coorY[1]) ^ 2;
+	distancia[1] <- (coorX[1] - coorX[2]) ^ 2 + (coorY[1] - coorY[2]) ^ 2;
+	distancia[2] <- (coorX[2] - coorX[3]) ^ 2 + (coorY[2] - coorY[3]) ^ 2;
+	distancia[3] <- (coorX[3] - coorX[0]) ^ 2 + (coorY[3] - coorY[0]) ^ 2;
+	//VERIFICAR SI SON IGUALES LAS DISTANCIAS
+	Si distancia[0] = distancia[1] & distancia[1] = distancia[2] & distancia[2] = distancia[3] & distancia[3] = distancia[0] Entonces
+		Escribir " Los 4 puntos forman un cuadrado al tener la misma distancia entre ellos ";
+	SiNo
+		Escribir " Los 4 puntos no forman un cuadrado al tener distancias diferentes entre ellos ";
+	FinSi
+FinAlgoritmo

@@ -1,0 +1,21 @@
+Algoritmo Serie_Seno //Serie de taylor es convergente y sirve para aproximar el ángulo
+	Definir numTerminos Como Entero;
+	Definir angulo Como Real;
+	Definir signo Como Entero;
+	Definir seno Como Real;
+	Definir nImpar Como Entero;
+	Definir factorial Como Real;;
+	signo<- 1;
+	factorial<- 1;
+	Escribir "Proporcione la cantidad de terminos que deseas calcular en la serie";
+	Leer numTerminos;
+	Escribir "Proporcione el angulo que desea conocer";
+	Leer angulo;
+	seno<- angulo;
+	Para nImpar <- 3 con paso 2 hasta numTerminos * 2 + 1 Hacer
+		signo<- signo * (-1);
+		factorial<- nImpar *(nImpar -1) * factorial;
+		seno<- seno + signo *(angulo^ nImpar/factorial);
+	FinPara
+	Escribir "El seno de ", angulo,"es igual a:", seno;
+FinAlgoritmo

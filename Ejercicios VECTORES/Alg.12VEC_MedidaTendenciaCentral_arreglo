@@ -1,0 +1,102 @@
+Algoritmo Medidas_tendencia_central
+	Definir arreglo Como Entero;
+	Definir num Como Entero; // 	Términos del arreglo
+	Definir media Como Real; // Promedio del arreglo
+	Definir moda Como Entero; // Lo que más se repite en el arreglo
+	Definir mediana Como Entero; // Término que está en medio del arreglo
+	Definir nm Como Entero;; //El tamaño del arreglo moda
+	Definir i Como Entero; // índice de los ciclos
+	Definir i2 Como Entero; // índice 2
+	Definir i3 Como Entero; // índice 3
+	Definir i4 Como Entero; // índice  4
+	media <- 0;
+	Repetir
+		Escribir "Ingrese cuantos términos desea tener en el arreglo (lista)";
+		Leer num;
+	Hasta Que num > 0
+	
+	Dimension arreglo[num];
+	// MEDIA
+	Escribir "Ingrese cada uno de los números que conforman el arreglo (lista)";
+	Para i <- 0 Hasta num - 1 Hacer
+		Leer arreglo[i];
+		media <- media + arreglo[i];
+	FinPara
+	media <- media / num;
+	
+	Para i <- 0 Hasta num - 2 Con Paso 1 Hacer
+		
+		i3 <- i;
+		
+		Para i2 <- i + 1 Hasta num - 1 Hacer
+			Si arreglo[i2] < arreglo[i3] Entonces
+				i3 <- i2;
+			FinSi
+		FinPara
+		
+		Si i3 <> i Entonces
+			i4 <- arreglo[i];
+			arreglo[i] <- arreglo[i3];
+			arreglo[i3] <- i4;
+		FinSi
+		
+	FinPara
+	// OBTENER MODA
+	//En este ciclo se obtiene la cantidad de números diferentes que hay en el arreglo y se guarda en la variable i2
+	i4 <- arreglo[0]; //En la variable i4 se guarda temporalmente el primer valor del arreglo para compararlo con los demas
+	nm <- 1;
+	Para i <- 1 Hasta num - 1 Con Paso 1 Hacer
+		Si arreglo[i] <> i4 Entonces
+			nm <- nm + 1; //Si el número es diferente a i4, entonces hay i2 + 1 números diferentes en el arreglo
+			i4 <- arreglo[i]; //Se cambia el valor de i4 para saber si hay más números diferentes a los anteriores a i4
+		FinSi
+	FinPara
+	
+	Dimension moda[nm]; //Se crea un vector de tamaño nm para guardar la frecuencia de cada número diferente
+	Para i <- 0 Hasta nm - 1 Hacer //Inicializamos el vector
+		moda[i] <- 0;
+	FinPara
+	
+	i4 <- arreglo[0]; //i4 de nuevo sirve para guardar un número temporalmente y compararlo con el siguiente
+	moda[0] <- 1; //Sabemos siempre que al menos el primer número al inicio tiene frecuencia 1
+	i2 <- 0; //Ahora usaremos i2 como el iterador del arreglo de modas
+	Para i <- 1 Hasta num - 1 Con Paso 1 Hacer
+		Si arreglo[i] <> i4 Entonces
+			i4 <- arreglo[i];
+			i2 <- i2 + 1;
+		FinSi
+		moda[i2] <- moda[i2] + 1;
+	FinPara
+	
+	i3 <- 0; //i3 es el indice en donde se encuentra la mayor frecuencia
+	Para i <- 1 Hasta nm - 1 Hacer
+		Si moda[i] > moda[i3] Entonces
+			i3 <- i;
+		FinSi
+	FinPara
+	
+	i2 <- -1; //i2es el indice para buscar la moda en la variable arreglo
+	Para i <- 0 Hasta i3 Hacer
+		i2 <- i2 + moda[i];
+	FinPara
+	
+	Escribir Sin Saltar "[";
+	Para i <- 0 Hasta num - 1 Hacer
+		Si i < num - 1 Entonces
+			Escribir Sin Saltar arreglo[i], ",";	
+		SiNo
+			Escribir arreglo[i], "]";
+		FinSi
+	FinPara
+	
+	Escribir " La media del arreglo es: " media;	
+	Escribir "La moda en el arreglo es: " arreglo[i2];
+	//OBTENER MEDIANA
+	Si num % 2 = 0 Entonces
+		mediana <- (arreglo[(num/2)-1] + arreglo[num/2 ]) / 2;
+	SiNo
+		mediana <- arreglo[(num+1) /2];
+	FinSi
+	Escribir "La mediana en el arreglo es: ", mediana;
+	Escribir "El rango de números que hay en el arreglo es entre: [", arreglo[0], ",", arreglo[num-1], "]";
+FinAlgoritmo

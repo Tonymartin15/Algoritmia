@@ -1,0 +1,14 @@
+Algoritmo temperaturas_for
+	Definir numConversiones Como Entero;
+	Definir tempFahrenheit Como Real;
+	Definir tempCelsius Como Real;
+	Definir i Como Entero;
+	Escribir "¿cuantas conversiones de temperatura desea realizar?";
+	Leer numConversiones;
+	Para i<- 1 hasta numConversiones Hacer
+		Escribir "Ingrese temperatura en Fahrenheir";
+		Leer tempFahrenheit;
+		tempCelsius = (5/9 * (tempFahrenheit -32));
+		Escribir  tempFahrenheit,"grados Fahrenheit equivalen a:", tempCelsius, "grados celsius";
+	FinPara
+FinAlgoritmo

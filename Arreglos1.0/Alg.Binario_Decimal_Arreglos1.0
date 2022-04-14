@@ -1,0 +1,20 @@
+Algoritmo BINARIO_DECIMAL_ARREGLOS
+	Definir B Como Entero;
+	Definir i Como Entero;
+	Definir numDecimal Como Entero;
+	Dimension B[5];
+	//GENERAR número Binario
+	Para i<- 0 hasta 4 Hacer
+		B[i]<- azar(2);
+	FinPara
+	numDecimal<- 0;
+	//OBTENER NÚMERO DECIMAL
+	Para i<- 0 hasta 4 Hacer
+		numDecimal<- numDecimal + B[i] * 2^(4-1);
+	FinPara
+	//IMPRIMIR AMBOS
+	Para i<- 0 hasta 4 Hacer
+		Escribir B[i], Sin Saltar;
+	FinPara
+	Escribir "Equivale a: ", numDecimal;
+FinAlgoritmo

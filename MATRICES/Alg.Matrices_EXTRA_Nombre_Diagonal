@@ -1,0 +1,29 @@
+Algoritmo Nombre_diagonal_principal
+	Definir i, j Como Entero;
+	Definir letraNom, tabla Como Caracter;
+	Dimension tabla[7,7];
+	Dimension letraNom[7];
+	letraNom[0] <- "A";
+	letraNom[1] <- "N";
+	letraNom[2] <- "T";
+	letraNom[3] <- "O";
+	letraNom[4] <- "N";
+	letraNom[5] <- "I";
+	letraNom[6] <- "O";
+	Para i<- 0 hasta 6 hacer 
+		Para j<- 0 hasta 6 Hacer
+			tabla[i,j]<- "0";
+		FinPara
+	FinPara
+	Para i<- 0 hasta 6 hacer 
+		para j<- 0 hasta 6 Hacer
+			tabla[i,i]<- letraNom[i];
+		FinPara
+	FinPara
+	Para i<- 0 hasta 6 Hacer
+		Para j<- 0 hasta 6 Hacer
+			Escribir "   ", tabla[i,j], "   ", Sin Saltar;
+		FinPara
+		Escribir "   ";
+	FinPara
+FinAlgoritmo

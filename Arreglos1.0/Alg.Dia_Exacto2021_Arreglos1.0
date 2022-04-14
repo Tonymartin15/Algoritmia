@@ -1,0 +1,52 @@
+Algoritmo Dia_Exacto_2021
+	Definir  semana como cadena;
+	Definir diasXmes Como Entero;;
+	Definir dia Como Entero;
+	Definir primerDia Como Entero;
+	Definir mes Como Entero;
+	Definir sumaDias Como Entero;
+	Definir i como Entero;
+	Dimension diasXmes[12], semana[7];
+	
+	primerDia<- 5; //El primero de diciembre será un viernes // Válido para 2021
+	diasXmes[0]<- 31;
+	diasXmes[1]<- 28;
+	diasXmes[2]<- 31;
+	diasXmes[3]<- 30;
+	diasXmes[4]<- 31;
+	diasXmes[5]<- 30;
+	diasXmes[6]<- 31;
+	diasXmes[7]<- 31;
+	diasXmes[8]<- 30;
+	diasXmes[9]<- 31;
+	diasXmes[10]<- 30;
+	diasXmes[11]<- 31;
+	semana[0]<-"Domingo";
+	semana[1]<-"Lunes";
+	semana[2]<-"Martes";
+	semana[3]<-"Miércoles";
+	semana[4]<-"Jueves";
+	semana[5]<-"Viernes";
+	semana[6]<-"Sábado";
+	Escribir "Proporcione el día como entero";
+	Leer dia;
+	Escribir "Proporcione el mes como entero";
+	Leer mes;
+	//calcular los días transcurridos en los meses pasados
+	sumaDias<-0;
+	Si mes > 1 entonces
+	Para i<-0 hasta mes-2 Hacer
+		sumaDias<- sumaDias + diasXmes[i];
+	FinPara
+	FinSi
+	//Sumar los días del mes actual
+	sumaDias<- sumaDias + dia;
+	//Obtener cuántos días quedan después de eliminar las semanas completas
+	sumaDias<- sumaDias%7;
+	//sumar el indice del primer día del año con el que se obtuvo
+	sumaDias<- sumaDias + primerDia;
+	//Validar que quede entre 0 y 6
+	sumaDias<- sumaDias % 7;
+	//Imprimir 
+	Escribir "La fecha ", dia, "/", mes, " cae ", semana[sumadias-1];
+FinAlgoritmo

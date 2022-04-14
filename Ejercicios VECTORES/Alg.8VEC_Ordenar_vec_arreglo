@@ -1,0 +1,80 @@
+Algoritmo Ordenamiento_vectores
+	Definir vec1 Como Entero; //PRIMER VECTOR
+	Definir vec2 Como Entero; //SEGUNDO VECTOR
+	Definir vec3 Como Entero; // VECTOR ORDENADO
+	Definir tam1 Como Entero; //tamaño del vector1
+	Definir tam2 Como Entero; //tamaño del vector2
+	Definir tam3 Como Entero; //tamaño del vector3
+	Definir i Como Entero; //iterador para el vector1
+	Definir i2 Como Entero; //iterador para el vector2
+	Definir i3 Como Entero; //iterador para el vector3
+	
+	// PREGUNTAR DIMENSIONES DE CADA VECTOR 
+	Repetir
+		Escribir "¿De qué tamaño es el vector1?";	
+		Leer tam1;
+	Hasta Que tam1 > 0
+	
+	Repetir
+		Escribir "¿De qué tamaño es el vector2?";
+		Leer tam2;
+	Hasta Que tam2 > 0
+	
+	tam3 <- tam1 + tam2;
+	Dimension vec1[tam1];
+	Dimension vec2[tam2];
+	Dimension vec3[tam3];
+	
+	// LLENAR VALORES  DE AMBOS VECTORES
+	Para i <- 0 Hasta tam1 - 1 Hacer
+		Si i > 0 Entonces
+			Repetir
+				Escribir "Ingresa el elemento ", i + 1, " del vector1";
+				Leer vec1[i];
+			Hasta Que vec1[i] >= vec1[i - 1]
+		SiNo
+			Escribir "Ingresa el elemento 1 del vector1";
+			Leer vec1[0];
+		FinSi
+	FinPara
+	
+	Para i2 <- 0 Hasta tam2 - 1 Hacer
+		Si i2 > 0 Entonces
+			Repetir
+				Escribir "Ingresa el elemento ", i2 + 1, " del vector2";
+				Leer vec2[i2];
+			Hasta Que vec2[i2] >= vec2[i2 - 1]
+		SiNo
+			Escribir "Ingresa el elemento 1 del vector2";
+			Leer vec2[0];
+		FinSi
+	FinPara
+	// ORDENAR VETORES Y ESCRIBIR VECTOR 3
+	i <- 0;
+	i2 <- 0;
+	Escribir sin saltar "[";
+	Para i3 <- 0 hasta tam3 -1 Hacer
+		Si i < tam1 & i2 < tam2 Entonces
+			Si vec1[i] < vec2[i2]
+				vec3[i3] <- vec1[i];
+				i <- i + 1;
+			SiNo
+				vec3[i3] <- vec2[i2];
+				i2 <- i2 + 1;
+			FinSi
+		SiNo
+			Si i < tam1 Entonces
+				vec3[i3] <- vec1[i];
+				i <- i + 1;
+			SiNo
+				vec3[i3] <- vec2[i2];
+				i2 <- i2 + 1;
+			FinSi
+		FinSi
+		Si i3 < tam3 - 1 Entonces
+			Escribir Sin Saltar vec3[i3], ",";
+		SiNo
+			Escribir vec3[i3], "]";
+		FinSi
+	FinPara
+FinAlgoritmo

@@ -1,0 +1,28 @@
+Algoritmo Estaturas_alumnos
+Definir estaturas Como Real;
+Definir estudiantes Como Entero;
+estudiantes <- 10;
+Dimension estaturas[estudiantes];
+Definir i Como Entero;
+Definir prom como real;
+prom <- 0;
+Definir numEstaturasSobrePromedio Como Entero;
+numEstaturasSobrePromedio <- 0;
+
+//INGRESAR LAS ESTATURAS DE LOS ESTUDIANTES AL VECTOR
+	Para i <- 0 Hasta estudiantes - 1 Hacer
+		Escribir "Proporcione la estatura del alumno en centímetros", i + 1;
+		Leer estaturas[i];
+		prom <- prom + estaturas[i];
+	FinPara
+	
+	//OBTENER PROMEDIO DE ESTATURAS
+	prom <- prom/ estudiantes;
+	Para i <- 0 hasta estudiantes- 1 Hacer
+		Si estaturas[i] > prom Entonces
+			numEstaturasSobrePromedio <- numEstaturasSobrePromedio + 1;
+		FinSi
+	FinPara
+	Escribir "El promedio de las estaturas es de ", prom , " centímetros ";
+	Escribir "Hay " numEstaturasSobrePromedio, " estudiantes por arriba del promedio general ";
+FinAlgoritmo

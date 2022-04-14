@@ -1,0 +1,26 @@
+Algoritmo radio_esferas
+	Definir radio Como Real;
+	Definir cantidadEsferas Como Entero;
+	Definir area Como Real;
+	Definir resp Como Caracter;
+	resp<- "s";
+	cantidadEsferas<- 0;
+	Mientras resp = "s" Hacer
+		cantidadEsferas<- cantidadEsferas + 1;
+		radio<- 0;
+		Mientras radio <= 0
+			Escribir "Proporcione el radio de la esfera que desea calcular";
+			Leer radio;
+			Si radio <= 0 Entonces
+				Escribir "ERROR: Elradio debe ser mayor que 0";
+			FinSi
+		FinMientras
+		area<- 4 * PI * radio ^ 2;
+		Escribir "El área de una esfera de radio ", radio," es: ", area;
+		Escribir "Desea calcular el área de otra esfera? s/n";
+		Hacer
+			Leer resp;
+		Mientras Que (resp = "s" o resp = "n") // checar detalle en clase
+	FinMientras
+	Escribir "Calculaste el área de ", cantidadEsferas, " esferas ";
+FinAlgoritmo

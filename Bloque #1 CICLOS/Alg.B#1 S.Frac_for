@@ -1,0 +1,12 @@
+Algoritmo Suma_fracciones_para
+	Definir n Como Entero;
+	Definir suma Como Real;
+	Definir i Como Entero;
+	suma<- 0;
+	Escribir "Proporcione el límite de la sumatoria 1/n";
+	Leer n;
+	Para i<- 1 hasta n Hacer
+		suma <- (suma + (1/i));
+	FinPara
+	Escribir "La sumatoria es de:", suma;
+FinAlgoritmo

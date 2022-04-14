@@ -1,0 +1,25 @@
+Algoritmo Automatizado_nombres_en_diagonales
+	Definir nombre, tabla como cadena;
+	Definir i,j,N Como Entero;
+	Escribir "¿Cuál es tu nombre?";
+	Leer nombre;
+	N<- Longitud(nombre);
+	Dimension  tabla[N,N]; // DIMENSION NOMBRE[N]
+	//LLENAR LA MATRIZ
+	Para i<- 0 hasta N-1 Hacer
+		Para j<- 0 Hasta N-1 Hacer
+			tabla[i,j]<- "*";
+		FinPara
+	FinPara
+	//ESCRIBIR EN LA DIAGONAL PRINCIPAL
+	Para i<- 0 hasta N-1 Hacer
+		tabla[i,i]<- Subcadena(nombre,i,i);
+	FinPara
+	//IMPRIMIR MATRIZ FILA POR FILA
+	Para i<- 0 hasta N-1 Hacer // recorrer filas
+		Para j<- 0 hasta N-1 Hacer // recorrer columnas
+			Escribir "   ", tabla[i,j], "   ", Sin Saltar;
+		FinPara
+		Escribir "   ";
+	FinPara
+FinAlgoritmo

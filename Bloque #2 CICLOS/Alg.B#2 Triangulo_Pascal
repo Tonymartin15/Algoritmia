@@ -1,0 +1,16 @@
+Algoritmo Triangulo_Pascal
+	Definir alturaMaxima Como Entero;
+	Definir coeficiente Como Entero;
+	Definir columna Como Entero;
+	Definir fila Como Entero;;
+	Escribir "Proporciona el número que representa la altura maxima del triangulo de Pascal";
+	Leer alturaMaxima;
+	Para fila<- 0 Hasta alturaMaxima -1 Hacer
+		coeficiente<- 1;
+		Para columna<-  0 hasta fila hacer
+			Escribir " ", coeficiente," " Sin Saltar;
+			coeficiente<- coeficiente *(fila - columna)/(columna + 1);
+		FinPara
+		Escribir " ";
+	FinPara
+FinAlgoritmo

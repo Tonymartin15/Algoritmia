@@ -1,0 +1,16 @@
+Algoritmo Dividir_sin_dividir_mientras
+	Definir N, M, respuesta, cont Como Real;
+	Escribir "Proporcione los valores de M y N";
+	Leer M , N;
+	respuesta<- N;
+	cont<- 0;
+	Si (N >= M)
+		Mientras respuesta >= M
+			respuesta<- respuesta - M;
+			cont<- cont +1;
+		FinMientras
+	Sino
+		Escribir "Es imposible efectuar la operacion";
+	FinSi
+	Escribir  "El numero ",M,"cabe",cont,"veces, en el numero ",N,"con residuo de",respuesta;
+FinAlgoritmo

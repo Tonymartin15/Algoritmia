@@ -1,0 +1,34 @@
+Algoritmo Diagonal_Principal // Matriz cuadrada que en la diagonal no lleva ceros y en lo demás si
+	Definir matriz Como Entero;
+	Definir i, j, size Como Entero;
+	Definir esDiagonal Como Logico;
+	esDiagonal <- Verdadero;
+	
+	Escribir "¿Cual es la dimension de la matriz?";
+	Leer size;
+	
+	Dimension matriz[size,size];
+	// LLENAR LA MATRIZ POR EL USUARIO
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			Escribir "Escriba el elemento de la matriz [",i,",",j,"]";
+			Leer matriz[i,j];
+		FinPara
+	FinPara
+	//COMPROBAR SI ES O NO DE TIPO DIAGONAL
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			Si i <> j & matriz[i,j] <> 0 Entonces
+				esDiagonal <- Falso;
+				i <- size;
+				j <- size;
+			FinSi
+		FinPara
+	FinPara
+	//IMPRIMIR RESULTADO DE SI ES O NO DE TIPO DIAGONAL
+	Si esDiagonal Entonces
+		Escribir "La matriz que acabas de proporcionar es de tipo diagonal";
+	SiNo
+		Escribir "La matriz que acabas de proporcionar no es diagonal";
+	FinSi
+FinAlgoritmo

@@ -1,0 +1,27 @@
+Algoritmo Coeficientes_polinomio // FALTÓ VERIFICAR CAMBIO DE SIGNO
+	Definir a Como Real;
+	Definir b Como Real;
+	Definir c Como Real;
+	Definir d Como Real;
+	Definir valorMaximo Como Real;
+	Definir valorMinimo Como Real;
+	Definir indice Como Entero;
+	Definir resultado Como Real;
+	Escribir "Proporcione el coeficiente de término cúbico";
+	Leer a;
+	Escribir "Proporcione el coeficiente de término cuadrático";
+	Leer b;
+	Escribir "Proporcione el coeficiente de término lineal";
+	Leer c;
+	Escribir "Proporcione el coeficiente de término independiente";
+	Leer d;
+	Escribir "Proporcione el valor mínimo a evaluar";
+	Leer valorMinimo;
+	Escribir "Proporcione el valor máximo a evaluar";
+	Leer valorMaximo;
+	Para indice<- valorMinimo con paso (valorMaximo - valorMinimo)/9 hasta valorMaximo Hacer
+		resultado<- a * indice ^ 3 + b * indice ^ 2 + c * indice + d;
+		
+		Escribir " El resultado cuando x = ", indice, " es igual a ", resultado;
+	FinPara
+FinAlgoritmo

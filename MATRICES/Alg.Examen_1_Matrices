@@ -1,0 +1,19 @@
+Algoritmo Examen_matrices_1 //Antonio Armando Martín Medina
+	Definir matriz Como Entero;
+	Definir i,x Como Entero;
+	Definir suma Como Entero;
+	//Pedir datos al usuario para comenzar el proceso
+	Dimension matriz[12];
+	Escribir "Proporcione un número para comenzar el proceso";
+	Leer x;
+	//PROCESO CON LAS OPERACIONES
+	matriz[0]<- x; // Se asigna x al primer espacio del vector
+	suma<- x;
+	Para i<-1 hasta 11 Hacer
+		matriz[i]<- 2*matriz[i-1]-1;
+		suma<- suma + matriz[i];
+	FinPara
+	//IMPRIMIR LOS RESULTADOS
+	Escribir " El último término de la matriz es:", matriz[11];
+	Escribir "La suma total de todos los términos del vector es:", suma;
+FinAlgoritmo

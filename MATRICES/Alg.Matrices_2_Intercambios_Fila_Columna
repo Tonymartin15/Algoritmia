@@ -1,0 +1,70 @@
+Algoritmo Intercambios_filas_columnas
+	Definir A, B Como Entero; // LAS MATRICES
+	Definir i, j, size, t Como Entero;
+	Definir fila, columna Como Entero;
+	Definir resp Como Caracter;
+	
+	Escribir "¿De qué tamaño son las matrices?";
+	Leer size;
+	
+	Dimension A[size,size], B[size,size];
+	
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size - 1 Hacer
+			A[i,j] <- Azar(10);
+			B[i,j] <- Azar(10);
+		FinPara
+	FinPara
+	
+	Para i <- 0 Hasta size - 1 Hacer
+		Para j <- 0 Hasta size + size - 1 Hacer
+			Si j >= size Entonces
+				Si j = size Entonces
+					Escribir "   ", B[i,j - size], " " Sin Saltar;
+				Sino
+					Escribir " ", B[i, j - size], " " Sin Saltar;
+				FinSi
+			SiNo
+				Escribir " ", A[i,j], " " Sin Saltar;
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	Repetir
+		
+		Escribir "¿Que fila de la matriz A te gustaría intercambiar?";
+		Leer fila;
+		
+		Escribir "¿Que fila de la matriz B te gustaría intercambiar?";
+		Leer columna;
+		
+		Para j <- 0 Hasta size - 1 Hacer
+			t <- A[fila - 1, j];
+			A[fila - 1, j] <- B[j, columna - 1];
+			B[j, columna - 1] <- t;
+		FinPara
+		
+		Para i <- 0 Hasta size - 1 Hacer
+			Para j <- 0 Hasta size + size - 1 Hacer
+				Si j >= size Entonces
+					Si j = size Entonces
+						Escribir "   ", B[i,j - size], " " Sin Saltar;
+					Sino
+						Escribir " ", B[i, j - size], " " Sin Saltar;
+					FinSi
+				SiNo
+					Escribir " ", A[i,j], " " Sin Saltar;
+				FinSi
+			FinPara
+			Escribir "";
+		FinPara
+		
+		Repetir
+			Escribir "¿Quieres intercambiar otra fila y columna? s/n";
+			Leer resp;
+			respuesta <- Minusculas(resp);
+		Hasta Que resp = "s" | resp = "n";
+		
+	Hasta Que resp = "n";
+FinAlgoritmo

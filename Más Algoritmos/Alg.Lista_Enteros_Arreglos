@@ -1,0 +1,13 @@
+Algoritmo Lista_Enteros_Arreglos
+	Definir listaNum Como Entero;
+	Definir size Como Entero;
+	Definir i Como Entero;
+	size<- 10;
+	Dimension listaNum[size];
+	Para i<- 0 hasta size -1 Hacer // proceso para inicializar el arreglo con "azar" o "aleatorio"
+		listaNum[i]<- azar(100);
+	FinPara
+	Para i<- 0 hasta 9 Hacer // proceso para escribir o imprimir el ARREGLO
+		Escribir"El arreglo en su posición [" ,i,"] tiene un valor de:",listaNum[i];
+	FinPara
+FinAlgoritmo

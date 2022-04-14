@@ -1,0 +1,42 @@
+Algoritmo Salarios_Empleados
+	Definir nombreEmpleado Como Caracter;
+	Definir sueldoEmpleado Como Real;
+	Definir numEmpleados Como Entero; //número de empleados
+	Definir i Como Entero; // indice
+	Definir promSueldo Como Real; // sueldo promedio de la empresa
+	Definir totalSueldos Como Real; // Cuanto suma entre todos los sueldos
+	Definir iMS Como Entero; //indice del sueldo mayor
+	
+	totalSueldos <- 0;
+	iMS <- 0;
+	
+	Repetir
+		Escribir "¿Cuántos empleados hay en la empresa actualmente?";
+		Leer numEmpleados;
+	Hasta Que numEmpleados > 0
+	
+	Dimension nombreEmpleado[numEmpleados];
+	Dimension sueldoEmpleado[numEmpleados];
+	Para i <- 0 Hasta numEmpleados - 1 Hacer
+		Repetir
+			Escribir "¿Cuál es el nombre del empleado n°", i + 1, "?";
+			Leer nombreEmpleado[i]; 
+		Hasta Que nombreEmpleado[i] <> ""
+		Repetir
+			Escribir "¿Cuál es el sueldo de ", nombreEmpleado[i], "?";
+			Leer sueldoEmpleado[i];
+		Hasta Que sueldoEmpleado[i] > 0
+		totalSueldos <- totalSueldos + sueldoEmpleado[i];
+		
+		Si i > 0 Entonces
+			Si sueldoEmpleado[i] > sueldoEmpleado[iMS] Entonces
+				iMS <- i;
+			FinSi
+		FinSi
+	FinPara
+	promSueldo <- totalSueldos / numEmpleados;
+	
+	Escribir "El total de la suma de todos los sueldos de la empresa es de: $", totalSueldos, " pesos ";
+	Escribir "El sueldo promedio de la empresa es de: $", promSueldo, " pesos";
+	Escribir nombreEmpleado[iMS], " es el empleado que más gana de la empresa con un sueldo de: $", sueldoEmpleado[iMS], " pesos";
+FinAlgoritmo

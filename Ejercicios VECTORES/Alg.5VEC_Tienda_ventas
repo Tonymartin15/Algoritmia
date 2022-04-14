@@ -1,0 +1,95 @@
+Algoritmo Tienda_online
+	Definir articulo Como Caracter;
+	Definir precio Como Real;
+	Dimension articulo[10];
+	Dimension precio[10];
+	Definir presupuesto Como Real;
+	Definir i Como Entero;
+	Definir resp Como Caracter;
+	Definir montoTotal Como Real;
+	Definir carritoCompras Como Caracter;
+	Definir numProductos Como Entero;
+	Dimension numProductos[10];
+	Dimension carritoCompras[10];
+	Definir n Como Entero;
+	montoTotal <- 0.0;
+	
+	articulo[0] <- "Xiaomi Mi Smart Band 5 (Versión Global)";
+	articulo[1] <- "Control Inalámbrico Xbox";
+	articulo[2] <- "Nuevo Echo Dot (4ta Gen) - Bocina inteligente con Alexa - Azul";
+	articulo[3] <- "Super Smash Bros. Ultimate - Nintendo Switch - Standard Edition";
+	articulo[4] <- "Lysol Aerosol Crisp Linen, 475g";
+	articulo[5] <- "RCA Freidora de Aire Eléctrica con Temporizador RC-105";
+	articulo[6] <- "LEGO Architecture París";
+	articulo[7] <- "BR - GAME OF THRONES ALL SEASONS S.1- S.8 [Blu-ray]";
+	articulo[8] <- "Tramontina Juego de Sartenes Turim, Rojo";
+	articulo[9] <- "(15 PACK) Mascarilla Cubrbocas de Seguridad KN95";
+	
+	precio[0] <-749.00 ;
+	precio[1] <- 1349.00;
+	precio[2] <- 999.00;
+	precio[3] <- 1168.28;
+	precio[4] <- 126.00;
+	precio[5] <-2121.64;
+	precio[6] <- 999.00;
+	precio[7] <- 2299.00;
+	precio[8] <- 299.00;
+	precio[9] <- 299.00;
+	
+	Para i <- 0 Hasta 9 Hacer
+		Escribir "Artículo ", i + 1, ": ", articulo[i], " Precio: $ ", precio[i];
+		carritoCompras[i] <- "";
+		numProductos[i] <- 0;
+	FinPara
+	
+	Escribir "¿Cuánto es tu presupuesto para comprar el día de hoy?";
+	Leer presupuesto;
+	
+	Repetir
+		
+		Repetir
+			Escribir "¿Cuál artículo deseas comprar el día de hoy? Indica un número";
+			Leer resp;
+			n <- ConvertirANumero(resp);
+		Hasta Que n >= 1 & n <= 10
+		
+		n <- n - 1;
+		montoTotal <- montoTotal + precio[n];
+		carritoCompras[n] <-  articulo[n];
+		numProductos[n] <- numProductos[n] + 1;
+		Si montoTotal > presupuesto Entonces
+			
+			Escribir "El último artículo que seleccionaste ha excedido tu presupuesto";
+			
+			montoTotal <- montoTotal - precio[n];
+			Si numProductos[n] = 1 Entonces
+				carritoCompras[n] <- "";
+			FinSi
+			numProductos[n] <- numProductos[n] - 1;
+			
+			Escribir "El total de tus compras del día es de: ", montoTotal;
+			Repetir
+				Escribir "¿Deseas agregar algún otro artículo a tus compras? s/n";
+				Leer resp;
+			Hasta Que resp = 's' | resp = 'n'
+		SiNo
+			Escribir "El total de tus compras es de: ", montoTotal;
+			Repetir
+				Escribir "¿Deseas agregar otro artículo? s/n";
+				Leer resp;
+			Hasta Que resp = 's' | resp = 'n'
+		FinSi
+	Hasta Que resp = 'n'
+	
+	Si montoTotal > 0.0 Entonces
+		Escribir "Lista de artículos comprados:";
+		Para i <- 0 Hasta 9 Hacer
+			Si numProductos[i] > 0 Entonces
+				Escribir carritoCompras[i], " x" numProductos[i], " = $" precio[i] * numProductos[i];
+			FinSi
+		FinPara
+		Escribir "Total = $ ", montoTotal;
+	SiNo
+		Escribir "No has comprado ningún artículo el día de hoy, esperamos que pronto encuentres algo de tu preferencia";
+	FinSi
+FinAlgoritmo

@@ -1,0 +1,39 @@
+Algoritmo OPERACIONES_AZAR_ARREGLOS
+	Definir listaNum Como Entero;
+	Definir size Como Entero;
+	Definir i Como Entero;
+	Definir operacion , resp Como Caracter;
+	size<- 10;
+	Dimension listaNum[size];
+	//proceso para inicializar el arreglo con "azar" o "aleatorio"
+	Para i<- 0 hasta size -1 Hacer 
+		listaNum[i]<- azar(10);
+		Escribir "[",i,"]:" ,listaNum[i];
+	FinPara
+	resp<- "S";
+	//Empieza ciclo de la operación
+	Mientras resp = "S"
+		Escribir "¿Cuál operación desea realizar (+1 /-1)?";
+		Leer operacion;
+		Si operacion = "+1"
+			//A cada valor se le suma 1
+			Para i<- 0 hasta size -1 Hacer
+				listaNum[i]<- (listaNum[i]) +1;
+			FinPara
+		SiNo
+			//A cada valor se le resta 1
+			Si operacion = "-1" 
+				Para i<- 0 hasta size -1 Hacer
+					listaNum[i]<- (listaNum[i]) -1;
+				FinPara
+			FinSi
+		FinSi
+		//Se imprime  la nueva lista con los valores nuevos y preguntar si se quiere hacer otra operación
+		Para i<- 0 Hasta size -1 Hacer
+			Escribir "[",i,"]:" ,listaNum[i];
+		FinPara
+		Escribir "¿Desea ejecutar otra operación? (S/N)";
+		Leer resp;
+		resp<- Mayusculas(resp);
+	FinMientras
+FinAlgoritmo

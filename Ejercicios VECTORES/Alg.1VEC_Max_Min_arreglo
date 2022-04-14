@@ -1,0 +1,26 @@
+Algoritmo Maximos_minimos_lista
+Definir listaNumeros Como Entero;
+Definir maximoLista Como Entero;
+Definir i Como Entero;
+Definir minimoLista Como Entero;
+Definir N Como Entero;
+N<- 20;
+Dimension listaNumeros[20];
+Para i <- 0 hasta N-1 Hacer
+	listaNumeros[i] = azar(100);
+	Escribir "El elemento ", i + 1, " es ", listaNumeros[i];
+FinPara
+maximoLista <- listaNumeros[0];
+minimoLista <- listaNumeros[0];
+		
+Para i <- 1 Hasta N-1 Hacer
+	Si listaNumeros[i] > maximoLista Entonces
+		maximoLista <- listaNumeros[i];
+	FinSi
+	Si listaNumeros[i] < minimoLista Entonces
+		minimoLista <- listaNumeros[i];
+	FinSi
+FinPara
+Escribir "El minimo de toda la lista es ", minimoLista;
+Escribir "El maximo de toda la lista es ", maximoLista;	
+FinAlgoritmo

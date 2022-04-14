@@ -1,0 +1,23 @@
+Algoritmo Binarios_repetir_for_mientras
+	Definir num Como Entero;
+	Definir indice Como Entero;
+	Definir numeroFinal Como Entero;
+	Definir binario,aux Como Real;
+	Repetir
+		Escribir 'Proporcione el numero que quiere convertir a binario (positivo menor a 1024)';
+		Leer numeroFinal;
+	Hasta Que (numeroFinal<1024 Y numeroFinal>=0)
+	Para indice<-0 Hasta numeroFinal Hacer
+		num <- indice;
+		binario <- 0;
+		aux <- 1;
+		Mientras num>0 Hacer
+			Si num MOD 2=1 Entonces
+				binario <- binario+aux;
+			FinSi
+			num <- trunc(num/2); // trunc es una funcion que quita los decimales de una operación
+			aux <- aux*10;
+		FinMientras
+		Escribir ' El numero ',indice,' se escribe como ',binario,' en binario ';
+	FinPara
+FinAlgoritmo

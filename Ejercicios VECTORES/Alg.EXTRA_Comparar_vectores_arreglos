@@ -1,0 +1,29 @@
+Algoritmo Comparar_Vectores
+	Definir i, A, B, D, posDif Como Entero; //indice, arreglo A, arreglo B, Dimensión, posición diferente
+	Definir iguales como logico;
+	D<- 3;
+	Dimension A[D] , B[D];
+	//Inicializar los vectores
+	Para i<- 0 hasta D- 1 Hacer
+		Escribir " Posición: ", i;
+		Escribir " Vector A";
+		Leer A[i];
+		Escribir " Vcetor B";
+		Leer B[i];
+	FinPara
+	//Comparar los vectores
+	iguales<- verdadero;
+	posDif<- -1;
+	Para i<- 0 hasta D-1 Hacer
+		Si A[i] <> B[i] Entonces
+			iguales = Falso;
+			posDif<- i;
+		FinSi
+	FinPara
+	//Imprimir resultado
+	Si iguales Entonces
+		Escribir " Ambos vectores son iguales ";
+	SiNo
+		Escribir " Los vectores no son iguales en la fila: ", posDif;
+	FinSi
+FinAlgoritmo

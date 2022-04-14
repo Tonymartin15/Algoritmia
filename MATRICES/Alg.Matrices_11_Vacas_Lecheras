@@ -1,0 +1,39 @@
+Algoritmo VACAS_LECHERAS //CALCULAR CUAL VACA PRODUCE MÁS LECHE CADA DÍA DE LA SEMANA Y PRODUCCIÓN TOTAL
+	Definir produccion Como Entero;
+	Definir i, j, numVacas Como Entero;
+	Definir mejorProduccion Como Entero;
+	
+	Escribir "¿Cuántas vacas hay en total?";
+	Leer numVacas;
+	
+	Dimension produccion[numVacas + 1,7];
+	// RECAUDAR LA INFORMACIÓN SOBRE LA PRODUCCIÓN  DIARIA DE CADA VACA 
+	Para i <- 0 Hasta numVacas - 1 Hacer
+		Para j <- 0 Hasta 6 Hacer
+			Escribir "¿Cuál fue la producción de la vaca n°", i + 1, " en el día ", j + 1;
+			Leer produccion[i,j];
+		FinPara
+	FinPara
+	//LLENANDO LA MATRIZ CON LA RESPECTIVA PRODUCCIÓN  DIARIA DE CADA VACA
+	Para i <- 0 Hasta numVacas - 1 Hacer
+		Escribir "Vaca n°", i + 1,": " Sin Saltar;
+		Para j <- 0 Hasta 6 Hacer
+			Escribir " ", produccion[i,j], " " Sin Saltar;
+		FinPara
+		Escribir "";
+	FinPara
+	//COMPARAR LA PRODUCCIÓN DIARIA DE CADA VACA PARA SACAR A LA QUE MÁS PRODUJO ESE DÍA
+	Para j <- 0 Hasta 6 Hacer
+		produccion[numVacas,j] <- produccion[0,j];
+		mejorProduccion <- 0;
+		Para i <- 1 Hasta numVacas - 1 Hacer
+			produccion[numVacas,j] <- produccion[numVacas,j] + produccion[i,j];
+			Si produccion[i,j] > produccion[mejorProduccion,j] Entonces
+				mejorProduccion <- i;
+			FinSi
+		FinPara
+		//IMPRIMIR LOS RESULTADOS POR CADA DÍA
+		Escribir "La vaca ", mejorProduccion + 1," produjo más en el día ", j + 1;
+		Escribir "La produccion total del día ", j + 1," es de: ", produccion[numVacas,j]," litros";
+	FinPara
+FinAlgoritmo

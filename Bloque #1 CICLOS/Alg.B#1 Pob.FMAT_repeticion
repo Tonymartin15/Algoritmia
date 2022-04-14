@@ -1,0 +1,18 @@
+Algoritmo Poblacion_estudiantil_fmat_repetir
+	Definir tasaCrecimiento Como Real;
+	Definir alumnos Como Real;;
+	Definir tiempo Como Entero;
+	alumnos<- 450.0;
+	tiempo<- 1;
+	Escribir "Proporcione la tasa porcentual de crecimiento anual de los alumnos";
+	Leer tasaCrecimiento;
+	tasaCrecimiento<- tasaCrecimiento /100;
+	Repetir
+		alumnos<- (alumnos + (alumnos *tasaCrecimiento));
+		Si alumnos > 1000.0 Entonces
+			alumnos <- 1000.0;
+		FinSi 
+		Escribir "En el año", 2020 + tiempo, "la cantidad de alumnos sería de:", redon(alumnos);
+		tiempo<- tiempo + 1;
+	Hasta Que  alumnos >= 1000 o tiempo >10
+FinAlgoritmo

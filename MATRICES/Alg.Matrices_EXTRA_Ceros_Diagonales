@@ -1,0 +1,33 @@
+Algoritmo Ceros_en_diagonal_principal_y_secundaria // LA PRINCIPAL [i,i] y la SECUNDARIA [i,(n-1)-i]
+	Definir Mt, B, i, j, N Como Entero;
+	N<- 5;
+	Dimension Mt[N,N], B[3,2];
+	// RELLENAR LA MATRIZ AL AZAR
+	Para i<- 0 hasta N-1 Hacer
+		Para j<- 0 hasta N-1 Hacer
+			Mt[i,j]<- azar(100);
+		FinPara
+	FinPara
+	//IMPRIMIR MATRIZ FILA POR FILA
+	Para i<- 0 hasta N-1 Hacer // recorrer filas
+		Para j<- 0 hasta N-1 Hacer // recorrer columnas
+			Escribir "    ", Mt[i,j], "    ", Sin Saltar;
+		FinPara
+		Escribir "    ";
+	FinPara
+	// OTRA MATRIZ CON LOS CEROS EN LAS 2 DIAGONALES
+	Escribir "PONER CEROS EN LAS DIAGONALES";
+	Para i<- 0 hasta N-1 Hacer
+		Para j<- 0 hasta N-1 Hacer
+			Mt[i,i]<- 0;
+			Mt[i,(N-1)-i]<- 0;
+		FinPara
+	FinPara
+	
+	Para i<- 0 hasta N-1 Hacer
+		Para j<- 0 hasta N-1 Hacer
+			Escribir "    ", Mt[i,j], "    ", Sin Saltar;
+		FinPara
+		Escribir "    ";
+	FinPara
+FinAlgoritmo

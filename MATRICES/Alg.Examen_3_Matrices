@@ -1,0 +1,31 @@
+Algoritmo Examen_matrices_3 //Antonio Armando Martín Medina
+	Definir matriz Como Caracter;
+	Definir i,j, l Como Entero; // La "l" es el indice de cada una de las letras del nombre
+	Definir tamanio Como Entero;
+	Definir nombre Como Caracter;
+	Dimension matriz[10,10];
+	
+	//CAPTURAR NOMBRE DEL USUARIO
+	Repetir
+		Escribir "¿Cuál es tu nombre?";
+		Leer nombre;
+		tamanio<-Longitud(nombre);
+	Hasta Que tamanio <= 8
+
+	l<-0;
+	//PONER CADA LETRA EN SU LUGAR DE LA MATRIZ
+	Para j<-0 hasta 9 Hacer
+		Para i<-0 hasta 9 Hacer
+			matriz[i,j]<- Subcadena(nombre,l,l];
+			l<-(l+1)%tamanio; //Indice de la cadena aumenta
+		FinPara
+	FinPara
+	
+	//IMPRIMIR LA MATRIZ CON EL NOMBRE
+	Para i<-0 hasta 9 Hacer
+		Para j<- 0 hasta 9 Hacer
+			Escribir "  ",matriz[i,j],"  " Sin Saltar;
+		FinPara
+		Escribir "  ";
+	FinPara
+FinAlgoritmo

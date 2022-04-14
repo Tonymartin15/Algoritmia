@@ -1,0 +1,13 @@
+Algoritmo Sumatoria_for
+	Definir n Como Entero;;
+	Definir suma Como Real;
+	Definir i Como Entero;
+	suma<- 0;
+	i<- 1;
+	Escribir "Proporcione el limite de la sumatoria (-1)^ i * (1/i)";
+	Leer n;
+	Para i<- 1 hasta n  Hacer
+		suma <- suma + (((-1)^i) *(1/i));
+	FinPara
+	Escribir "La sumatoria es:", suma;
+FinAlgoritmo

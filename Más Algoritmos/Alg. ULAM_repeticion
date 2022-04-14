@@ -1,0 +1,17 @@
+Algoritmo Conjetura_ULAM_repetir
+	Definir numeroEntero Como Entero;
+	Leer numeroEntero;
+	Repetir
+		
+		Mientras numeroEntero <> 1 Hacer
+			Escribir numeroEntero;
+			Si numeroEntero % 2 =1 Entonces
+				numeroEntero<- numeroEntero *3 + 1;
+			SiNo
+				numeroEntero<- numeroEntero /2;
+			FinSi
+		FinMientras
+		Escribir 1;
+		Leer numeroEntero;
+	Hasta Que numeroEntero < 0
+FinAlgoritmo

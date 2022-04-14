@@ -1,0 +1,39 @@
+Algoritmo EXTRA_Calificaciones
+	Definir i Como Entero;
+	Definir numAprobados Como Entero;
+	Definir numArribaPromedio Como Entero;
+	Definir sumaCal Como Entero;
+	Definir Cal Como Entero;
+	Definir promedio Como Real;
+	Definir minimoAprobatorio Como Entero;
+	Definir N Como Entero;
+	N<- 10;
+	Dimension cal[N];
+	minimoAprobatorio<- 70;
+	numAprobados<- 0;
+	numArribaPromedio<- 0;
+	sumaCal<- 0;
+	//CAPTURAR VECTOR Y CONTAR APROBADOS
+	Para i<- 0 hasta N-1 Hacer
+		cal[i]<- azar(101);
+		Escribir " El vector en la posición ", i, " tiene valor: ", cal[i];
+		Si cal[i]>= minimoAprobatorio Entonces
+			numAprobados<- numAprobados + 1;
+		FinSi
+	FinPara
+	Escribir "Aprobados= ", numAprobados;
+	Escribir "Reprobados= ", N - numAprobados;
+	//CALCULAR promedio
+	Para i<- 0 hasta N-1 Hacer
+		sumaCal<- sumaCal + cal[i];
+	FinPara
+	promedio<- sumaCal/N;
+	Escribir " El promedio del grupo es de: ", promedio;
+	//CONTAR CUANTOS HAY ARRIBA DEL promedio
+	Para i<-0 hasta N-1 Hacer
+		Si cal[i]> promedio Entonces
+			numArribaPromedio<- numArribaPromedio + 1;
+		FinSi
+	FinPara
+	Escribir " Hay ", numArribaPromedio, " alumnos arriba del promedio ";
+FinAlgoritmo

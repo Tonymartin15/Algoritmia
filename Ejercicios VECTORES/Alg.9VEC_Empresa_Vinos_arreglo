@@ -1,0 +1,115 @@
+Algoritmo Empresa_Vinos
+	Definir vTinto Como Entero;
+	Definir vMalbec Como Entero;
+	Definir vMerlot Como Entero;
+	Definir vChardonnay Como Entero;
+	Definir vJerez Como Entero;
+	Definir tiempo Como Entero;
+	Definir i Como Entero;
+	Definir totalLitrosAnual Como Entero;
+	Definir totalLitrosVino Como Entero;
+	Definir iMPM Como Entero; //indice(con base en el año) de la Mayor Producción del vino Malbec
+	
+	Repetir
+		Escribir "Ingrese la cantidad de años de producción";	
+		Leer tiempo;
+	Hasta Que tiempo > 0
+	
+	Dimension vTinto[tiempo];
+	Dimension vMalbec[tiempo];
+	Dimension vMerlot[tiempo];
+	Dimension vChardonnay[tiempo];
+	Dimension vJerez[tiempo];
+	Dimension totalLitrosAnual[tiempo];
+	Dimension totalLitrosVino[5];
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		totalLitrosAnual[i] <- 0;
+	FinPara
+	
+	Para i <- 0 Hasta 4 Hacer
+		totalLitrosVino[i] <- 0;
+	FinPara
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Repetir
+			Escribir "¿Cuál fue la producción del vino tinto en el año n°", i + 1;	
+			Leer vTinto[i];
+		Hasta Que vTinto[i] >= 0
+		
+		totalLitrosAnual[i] <- totalLitrosAnual[i] + vTinto[i];
+		totalLitrosVino[0] <- totalLitrosVino[0] + vTinto[i];
+		
+	FinPara
+	
+	iMPM <- 0;
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Repetir
+			Escribir "¿Cuál fue la producción del vino Malbec en el año n°", i + 1;	
+			Leer vMalbec[i];
+		Hasta Que vMalbec[i] >= 0
+		
+		Si vMalbec[i] > vMalbec[iMPM] Entonces
+			iMPM <- i;
+		FinSi
+		
+		totalLitrosAnual[i] <- totalLitrosAnual[i] + vMalbec[i];
+		totalLitrosVino[1] <- totalLitrosVino[1] + vMalbec[i];
+		
+	FinPara
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Repetir
+			Escribir "¿Cuál fue la producción del vino Merlot en el año n°", i + 1;	
+			Leer vMerlot[i];
+		Hasta Que vMerlot[i] >= 0
+		
+		totalLitrosAnual[i] <- totalLitrosAnual[i] + vMerlot[i];
+		totalLitrosVino[2] <- totalLitrosVino[2] + vMerlot[i];
+		
+	FinPara
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Repetir
+			Escribir "¿Cuál fue la producción del vino Chardonnay en el año n°", i + 1;	
+			Leer vChardonnay[i];
+		Hasta Que vChardonnay[i] >= 0
+		
+		totalLitrosAnual[i] <- totalLitrosAnual[i] + vChardonnay[i];
+		totalLitrosVino[3] <- totalLitrosVino[3] + vChardonnay[i];
+		
+	FinPara
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Repetir
+			Escribir "¿Cuál fue la producción del vino de Jerez en el año n°", i + 1;	
+			Leer vJerez[i];
+		Hasta Que vJerez[i] >= 0
+		
+		totalLitrosAnual[i] <- totalLitrosAnual[i] + vJerez[i];
+		totalLitrosVino[4] <- totalLitrosVino[4] + vJerez[i];
+		
+	FinPara
+	
+	Para i <- 0 Hasta tiempo - 1 Hacer
+		
+		Escribir "Producción de vino en el año n°", i + 1, ": ", totalLitrosAnual[i];
+		
+		Si vMerlot[i] < vTinto[i] & vMerlot[i] < vMalbec[i] & vMerlot[i] < vChardonnay[i] & vMerlot[i] < vJerez[i] Entonces
+			Escribir "En el año n°", i + 1, " la producción del vino Merlot fue la menor";
+		FinSi
+	FinPara
+	
+	Escribir "La producción total del vino Tinto fue de: ", totalLitrosVino[0]," litros ";
+	Escribir "La producción total del vino Malbec: ", totalLitrosVino[1], " litros ";
+	Escribir "La producción total del vino Merlot: ", totalLitrosVino[2], " litros ";
+	Escribir "La producción total del vino Chardonnay: ", totalLitrosVino[3], " litros ";
+	Escribir "La producción total del vino de Jerez: ", totalLitrosVino[4], " litros ";
+	Escribir "El año n°", iMPM + 1, " fue el de mayor producción para el vino Malbec con un total de ", vMalbec[iMPM]," litros ";
+	
+FinAlgoritmo

@@ -1,0 +1,22 @@
+Algoritmo combinaciones_y_factoriales
+	Definir n Como Entero;
+	Definir nMenos2Factorial Como Entero;
+	Definir combinaciones Como Entero;
+	Definir resp Como Caracter;
+	Escribir "La convinacion de 2 elementos tomados de 2 en 2 es igual a 1";
+	nMenos2Factorial<- 1;
+	n<- 3;
+	resp <- "s";
+	Mientras resp = "s" y n <= 14 Hacer
+		Escribir "¿Quieres aumentar la cantidad de elemntos? s/n";
+		Repetir
+			Leer resp;
+		Hasta Que resp = "s" o resp = "n";
+		Si resp = "s" Entonces
+			combinaciones <- (n * (n- 1) * nMenos2Factorial)/ (2 * nMenos2Factorial);
+			Escribir "La combinación de ", n, " elementos tomados de 2 en 2 es igual a  ", combinaciones;
+			nMenos2Factorial<- nMenos2Factorial * (n - 2);
+			n<- n + 1;
+	     FinSi
+	FinMientras
+FinAlgoritmo

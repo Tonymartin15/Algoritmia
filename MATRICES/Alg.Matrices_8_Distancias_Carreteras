@@ -1,0 +1,28 @@
+Algoritmo distancias_entre_carreteras
+	Definir i,j Como Entero;
+	Definir carreteras Como Entero;
+	Dimension carreteras[5,5];
+	Definir ciudades Como Caracter;
+	Dimension ciudades[5];
+
+	Para i<-0 hasta 	4 Hacer
+		Escribir "Ingrese las ciudades que desea tener en la matriz";
+		Leer ciudades[i];
+	FinPara
+	
+	
+	Para i<- 0 hasta 4 Hacer
+		Para j<- 0 hasta 4 Hacer
+			Escribir "Posición carreteras[",i,",",j,"]";
+			Leer carreteras[i,j];
+		FinPara
+	FinPara
+	Escribir "Lista de carreteras";
+	Para i<-0 hasta 4 Hacer
+		Para j<- 0 hasta 4 Hacer
+			Si carreteras[i,j] = 1 Entonces
+				Escribir ciudades[i]," - ", ciudades[j];
+			FinSi
+		FinPara
+	FinPara	
+FinAlgoritmo

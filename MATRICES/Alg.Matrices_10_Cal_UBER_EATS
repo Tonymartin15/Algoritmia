@@ -1,0 +1,45 @@
+Algoritmo Uber_eats // PROMEDIAR CALIFICACIONES DE UN RESTAURANTE
+	Definir cal Como Real; //CALIFICACIONES DE LOS CLIENTES
+	Definir i, j Como Entero; //ITERADORES
+	Dimension cal[6,4];
+	// RECABAR INFORMACIÓN DE CADA CLIENTE
+	Para i <- 0 Hasta 4 Hacer
+		Escribir "Respuestas del cliente ", i + 1, "°";
+		Escribir "Califique cada aspecto con una puntuación de 1 (pésimo) hasta 5 (excelente) dependiendo de su experiencia con nosotros";
+		Escribir "¿Cómo fue la atención de los empleados con usted?";
+		Leer cal[i,0];
+		Escribir "¿Qué le pareció la calidad de la comida?";
+		Leer cal[i,1];
+		Escribir "¿Cómo observó el costo / beneficio respecto a lo que recibió?";
+		Leer cal[i,2];
+		Escribir "¿Qué tal se sintió con el ambiente en general de nuestro restaurante (música,decoración,espacios)?";
+		Leer cal[i,3];
+	FinPara
+	//SACANDO LOS PROMEDIOS DE CADA ASPECTO COLUMNA POR COLUMNA... Recorriendo primero las columnas
+	Para j <- 0 Hasta 3 Hacer
+		cal[5,j] <- 0; // PARA QUE ESTE INICIALIZADA y no salga error
+		Para i <- 0 Hasta 4 Hacer
+			cal[5,j] <- cal[5,j] + cal[i,j]; //Guardar los datos
+		FinPara
+		cal[5,j] <- cal[5,j]/5; // SACAR EL PROMEDIO DE LO QUE SE ESTA GUARADADNO COLUMNA POR COLUMNA
+	FinPara
+	//LLENAR LA MATRIZ CON TODOS LOS DATOS
+	
+	Escribir "               Apartados";
+	Escribir "            1   2   3   4";
+	Escribir "            -   -   -   -";
+	
+	Para i <- 0 Hasta 4 Hacer
+		Escribir "Cliente ", i + 1,"°" Sin Saltar;
+		Para j <- 0 Hasta 3 Hacer
+			Escribir "  ", cal[i,j], " " Sin saltar;
+		FinPara
+		
+		Escribir "";
+	FinPara
+	
+	Escribir "Promedios:" Sin Saltar;
+	Para j <- 0 Hasta 3 Hacer
+		Escribir " ", cal[5,j], " " Sin Saltar;
+	FinPara
+FinAlgoritmo

@@ -1,0 +1,93 @@
+Algoritmo Estados_Capitales_MEXICO  // [Intentar con ciclo mientras] o que escriba que no existe  cuando no hay ese estado
+	Definir estado Como Caracter; // Guarda nombre de los estados
+	Definir capital Como Caracter; // Guarda nombre de las capitales
+	Dimension estado[32];
+	Dimension capital[32];
+	Definir i Como Entero;
+	Definir respOtro Como Caracter; // Para saber si el usuario desea continuar
+	Definir respuesta Como Caracter; // Para guardar la respuesta del usuario
+	Definir respEstado Como Caracter; // Guardar respuesta del usuario
+	  //ESTADOS DE LA REPÚBLICA
+	estado[0] <- "Aguascalientes";
+	estado[1] <- "Baja California";
+	estado[2] <- "Baja California Sur";
+	estado[3] <- "Campeche";
+	estado[4] <- "Chihuahua";
+	estado[5] <- "Chiapas";
+	estado[6] <- "Ciudad de México";
+	estado[7] <- "Coahuila";
+	estado[8] <- "Colima";
+	estado[9] <- "Durango";
+	estado[10] <- "Guanajuato";
+	estado[11] <- "Guerrero";
+	estado[12] <- "Hidalgo";
+	estado[13] <- "Jalisco";
+	estado[14] <- "México";
+	estado[15] <- "Michoacán";
+	estado[16] <- "Morelos";
+	estado[17] <- "Nayarit";
+	estado[18] <- "Nuevo León";
+	estado[19] <- "Oaxaca";
+	estado[20] <- "Puebla";
+	estado[21] <- "Querétaro";
+	estado[22] <- "Quintana Roo";
+	estado[23] <- "San Luis Potosí";
+	estado[24] <- "Sinaloa";
+	estado[25] <- "Sonora";
+	estado[26] <- "Tabasco";
+	estado[27] <- "Tamaulipas";
+	estado[28] <- "Tlaxcala";
+	estado[29] <- "Veracruz";
+	estado[30] <- "Yucatán";
+	estado[31] <- "Zacatecas";
+	
+	//CAPITALES DE LA REPÚBLICA
+	capital[0] <- "Aguascalientes";
+	capital[1] <- "Mexicali";
+	capital[2] <- "La Paz";
+	capital[3] <- "San Francisco de Campeche";
+	capital[4] <- "Chihuahua";
+	capital[5] <- "Tuxtla Gutiérrez";
+	capital[6] <- "Ciudad de México";
+	capital[7] <- "Saltillo";
+	capital[8] <- "Colima";
+	capital[9] <- "Victoria de Durango";
+	capital[10] <- "Guanajuato";
+	capital[11] <- "Chilpancingo de los Bravo";
+	capital[12] <- "Pachuca de Soto";
+	capital[13] <- "Guadalajara";
+	capital[14] <- "Toluca de Lerdo";
+	capital[15] <- "Morelia";
+	capital[16] <- "Cuernavaca";
+	capital[17] <- "Tepic";
+	capital[18] <- "Monterrey";
+	capital[19] <- "Oaxaca de Juárez";
+	capital[20] <- "Puebla de Zaragoza";
+	capital[21] <- "Santiago de Querétaro";
+	capital[22] <- "Chetumal";
+	capital[23] <- "San Luis Potosí";
+	capital[24] <- "Culiacán";
+	capital[25] <- "Hermosillo";
+	capital[26] <- "Villahermosa";
+	capital[27] <- "Ciudad Victoria";
+	capital[28] <- "Tlaxcala de Xicohténcatl";
+	capital[29] <- "Xalapa";
+	capital[30] <- "Mérida";
+	capital[31] <- "Zacatecas";
+	Repetir
+		Escribir "¿De qué estado deseas conocer su capital?";
+		Leer respuesta;
+	    respuesta <- Minusculas(respuesta);
+	     Para i <- 0 Hasta 31 Hacer
+		  respEstado <- estado[i];
+		  respEstado<- Minusculas(respEstado);
+		  Si respEstado = respuesta Entonces
+			Escribir capital[i];
+			 i <- 31;
+	       FinSi
+	   FinPara
+	   Escribir "Quieres continuar? s/n";
+	   Leer respOtro;
+   Hasta Que respOtro = "n"
+   Escribir " Ahora ya conoces un poco más de las capitales de México; ¡FELICIDADES!";
+FinAlgoritmo

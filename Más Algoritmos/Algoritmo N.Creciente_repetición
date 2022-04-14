@@ -1,0 +1,9 @@
+Algoritmo Numeros_creciente_repetir
+	Definir num, anterior Como Entero; //anterior<- 0
+	num<- 0;
+	Repetir
+		anterior<- num;
+		Escribir "Escribe u numero positivo";
+		Leer num;
+	Hasta Que num < anterior
+FinAlgoritmo

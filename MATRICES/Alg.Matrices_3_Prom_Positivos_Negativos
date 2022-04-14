@@ -1,0 +1,33 @@
+Algoritmo Promedio_positivos_negativos
+	Definir matriz Como Entero;
+	Definir promP, promN Como Real; // PROMEDIO DE POSITIVOS Y PROMEDIO NEGATIVOS
+	Definir numP, numN Como Entero; //numerosPositivos y numerosNegativos
+	Definir i, j Como Entero; // ITERADORES
+	
+	promN <- 0;
+	promP <- 0;
+	numP <- 0;
+	numN <- 0;
+	Dimension matriz[12,19]; // 12 FILAS Y 19 COLUMNAS
+	// SE CATALOGA COMO POSITIVO O NEGATIVO, LUEGO SE SUMAN A SU RESPECTIVO PROMEDIO Y SE CUENTA CUANTOS HAY DE CADA TIPO (POSITIVOS Y NEGATIVOS)
+	Para i <- 0 Hasta 11 Hacer 
+		Para j <- 0 Hasta 18 Hacer
+			matriz[i,j] <- Aleatorio(-9,9);
+			Si matriz[i, j] >= 0 Entonces
+				Escribir "  ", matriz[i,j], " " Sin Saltar;
+				promP <- promP + matriz[i,j];
+				numP <- numP + 1;
+			SiNo
+				Si matriz[i,j] < 0 Entonces
+					Escribir " ", matriz[i,j], " " Sin Saltar;
+					promN <- promN + matriz[i,j];
+					numN <- numN + 1;
+				FinSi
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	
+	Escribir "El promedio de todos los números positivos de la matriz es de: ", promP/numP;
+	Escribir "El promedio de todos los números negativos de la matriz es de: ", promN/numN;
+FinAlgoritmo

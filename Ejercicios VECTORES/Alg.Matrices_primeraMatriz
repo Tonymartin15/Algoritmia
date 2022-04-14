@@ -1,0 +1,16 @@
+Algoritmo primera_matriz // Para escribir e imprimir una matriz
+	Definir A, B, i, i2 Como Entero;
+	Dimension A[2,3] ,B[3,2];
+	A[0,0] = -2;
+	A[1,0] = 5;
+	A[0,1] = 5;
+	A[1,1] = 2;
+	A[0,2] = 6;
+	A[1,2] = 7;
+	Para i<- 0 hasta 1 hacer 
+		Para i2<- 0 hasta 2 Hacer
+			Escribir "   ", A[i,i2], "   ", sin saltar;
+		FinPara
+		Escribir "   ";
+	FinPara
+FinAlgoritmo

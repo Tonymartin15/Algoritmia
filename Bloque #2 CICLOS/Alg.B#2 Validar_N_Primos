@@ -1,0 +1,19 @@
+Algoritmo Numeros_primos_validar_
+	Definir num Como Entero;
+	Definir indice Como Entero;
+	Definir n Como Entero;
+	Definir esNumeroPrimo Como Logico;
+	Escribir "Proporcione el numero para saber si hay numeros primos iguales o menores";
+	Leer num;
+	Para indice<- 1 Hasta num Hacer
+		esNumeroPrimo =Verdadero;
+		Para n<- 2 con paso 1 Hasta indice -1 Hacer
+			Si indice % n = 0 Entonces
+				esNumeroPrimo<- Falso;
+			FinSi
+		FinPara
+		Si esNumeroPrimo Entonces
+			Escribir indice;
+		FinSi
+	FinPara
+FinAlgoritmo

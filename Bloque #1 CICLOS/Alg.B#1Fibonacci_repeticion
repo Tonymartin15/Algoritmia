@@ -1,0 +1,19 @@
+Algoritmo Fibonacci_repetir
+	Definir nMenos2, nMenos1, nActual, limiteN, indice Como Entero;
+	Escribir "¿Hasta que numero de la secuencia desea llegar?";
+	Leer limiteN;
+	Escribir "El primer numero de la secuencia de Fbonacci es 0";
+	Si limiteN > 1 Entonces
+		indice<- 2;
+		nMenos2<- 0;
+		nMenos1<- 0;
+		nActual<- 1;
+		Repetir
+			Escribir "El numero ", indice, " de la secuencia de Fibonacci es:", nActual;
+			nMenos2<- nMenos1;
+			nMenos1<- nActual;
+			nActual<- nMenos2 + nMenos1;
+			indice<- indice + 1;
+		Hasta Que indice > limiteN
+	FinSi
+FinAlgoritmo
